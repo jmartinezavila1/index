@@ -73,7 +73,7 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="adminDropdown">
                                 <a class="dropdown-item" href="#">Profile</a>
-                                <a class="dropdown-item" href="#">Logout</a>
+                                <a class="dropdown-item" href="login.html">Logout</a>
                             </div>
                         </li>
                     </ul>
@@ -86,77 +86,88 @@
     <main>
         <nav class="navbar navbar-expand-lg navbar-dark" aria-label="Fifth navbar example">
             <div class="container-fluid">
-                <div class="collapse navbar-collapse" id="navbarsExample05">
-                    <div>
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <div>
-                                <li class="nav-item">
-                                    <a class="nav-link" aria-current="page" href="index.html">
-                                        <i class="icon-bottom bi bi-speedometer"></i>Dashboard</a>
-                                </li>
-                            </div>
-                            <div class="boder-left">
-                                <li class="nav-item">
-                                    <a class="nav-link" aria-current="page" href="customer.html">
-                                        <i class="icon-bottom bi bi-file-person-fill"></i>Customer</a>
-                                </li>
-                            </div>
-                            <div class="boder-left">
-                                <li class="nav-item">
-                                    <a class="nav-link" aria-current="page" href="list_repairs.html">
-                                        <i class="icon-bottom bi bi-tools"></i>Repairs </a>
-                                </li>
-                            </div>
-                            <div class="boder-left">
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="dropdown05"
-                                        data-bs-toggle="dropdown" aria-expanded="false">
-                                        <i class="icon-bottom bi bi-person-fill-gear"></i>Maintain</a>
-                                    <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown05">
-                                        <li><a class="dropdown-item" href="#"> Customer &raquo; </a>
-                                            <ul class="submenu dropdown-menu">
-                                                <li><a class="dropdown-item" href="city.html">City</a></li>
-                                                <li><a class="dropdown-item" href="province.html">Province</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a class="dropdown-item" href="#"> Equipment &raquo; </a>
-                                            <ul class="submenu dropdown-menu">
-                                                <li><a class="dropdown-item" href="color.html">Color</a></li>
-                                                <li><a class="dropdown-item" href="manufacture.html">Manufacturer</a>
-                                                </li>
-                                                <li><a class="dropdown-item" href="type.html">Type</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a class="dropdown-item" href="#"> Repair &raquo; </a>
-                                            <ul class="submenu dropdown-menu">
-                                                <li><a class="dropdown-item" href="parts.html">Parts</a></li>
-                                                <li><a class="dropdown-item" href="technician.html">Technicians</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </div>
+              <div class="collapse navbar-collapse" id="navbarsExample05">
+                <div>
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <div id="dashboard-menu">
+                      <li class="nav-item">
+                        <a id="dashboard-link" class="nav-link" aria-current="page" href="index.html">
+                          <i class="icon-bottom bi bi-speedometer"></i>Dashboard</a>
+                      </li>
+                    </div>
+                    <div id="customer-menu" class="boder-left">
+                      <li class="nav-item">
+                        <a id="customer-link" class="nav-link" aria-current="page" href="customer.html">
+                          <i class="icon-bottom bi bi-file-person-fill"></i>Customer</a>
+                      </li>
+                    </div>
+                    <div id="repairs-menu" class="boder-left">
+                      <li class="nav-item">
+                        <a id="repairs-link" class="nav-link" aria-current="page" href="list_repairs.html">
+                          <i class="icon-bottom bi bi-tools"></i>Repairs</a>
+                      </li>
+                    </div>
+                    <div id="maintain-menu" class="boder-left">
+                      <li class="nav-item dropdown">
+                        <a id="maintain-link" class="nav-link dropdown-toggle" href="#" id="dropdown05" data-bs-toggle="dropdown" aria-expanded="false">
+                          <i class="icon-bottom bi bi-person-fill-gear"></i>Maintain</a>
+                        <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown05">
+                          <!-- Add id to submenu items -->
+                          <li id="customer-submenu">
+                            <a class="dropdown-item" href="#"> Customer &raquo; </a>
+                            <ul class="submenu dropdown-menu">
+                              <li><a class="dropdown-item" href="city.html">City</a></li>
+                              <li><a class="dropdown-item" href="province.html">Province</a></li>
+                            </ul>
+                          </li>
+                          <li id="equipment-submenu">
+                            <a class="dropdown-item" href="#"> Equipment &raquo; </a>
+                            <ul class="submenu dropdown-menu">
+                              <li><a class="dropdown-item" href="color.html">Color</a></li>
+                              <li><a class="dropdown-item" href="manufacture.html">Manufacturer</a></li>
+                              <li><a class="dropdown-item" href="type.html">Type</a></li>
+                            </ul>
+                          </li>
+                          <li id="repair-submenu">
+                            <a class="dropdown-item" href="#"> Repair &raquo; </a>
+                            <ul class="submenu dropdown-menu">
+                              <li><a class="dropdown-item" href="parts.html">Parts</a></li>
+                              <li><a class="dropdown-item" href="technician.html">Technicians</a></li>
+                            </ul>
+                          </li>
                         </ul>
+                      </li>
                     </div>
-                    <!--Search by Customer -->
-                    <div class="search-bar">
-                        <input type="search" placeholder="Search by Customer" id="searchInput">
-                        <button type="button" class="search-button" onclick="performSearch()">
-                            <i class="bi bi-search"></i>
-                        </button>
+                    <div id="reports-menu" class="boder-left">
+                      <li class="nav-item dropdown">
+                        <a id="reports-link" class="nav-link dropdown-toggle" href="#" id="dropdown05" data-bs-toggle="dropdown" aria-expanded="false">
+                          <i class="icon-bottom bi bi-clipboard2-data-fill"></i>Reports</a>
+                        <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown05">
+                          <li><a id="warranty-report-link" class="dropdown-item" href="warranty_report.html"> Warranty&raquo; </a></li>
+                          <li><a id="repair-report-link" class="dropdown-item" href="repair_report.html"> Repairs &raquo; </a></li>
+                          <li><a id="activity-report-link" class="dropdown-item" href="activity_report.html"> User Activity &raquo; </a></li>
+                        </ul>
+                      </li>
                     </div>
+                  </ul>
                 </div>
+                <!--Search by Customer -->
+                <div class="search-bar">
+                  <input type="search" placeholder="Search by Customer" id="searchInput">
+                  <button type="button" class="search-button" onclick="performSearch()">
+                    <i class="bi bi-search"></i>
+                  </button>
+                </div>
+              </div>
             </div>
-        </nav>
+          </nav>
+          
 
         <!-- List Repair table body -->
         <div class="navbar-dark">
             <div class=" list-top">
                 <div class=" list-top-flex">
                     <p class="main-title">Repairs List</p>
-                    <button id="newCustomer" class="button" onclick="location.href='new_repairs.html'"
-                        data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
-                        data-bs-title="Add a new repair.">New</button>
                 </div>
             </div>
         </div>
@@ -166,9 +177,20 @@
                 <tr>
                     <th>Customer</th>
                     <th>Equipment</th>
-                    <td>Technician</td>
+                    <th>Technician</th>
                     <th>Date</th>
-                    <th>Status</th>
+                    <th>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span>Status</span>
+                            <button class="btn btn-sm btn-secondary custom-tooltip" data-bs-toggle="popover" data-bs-html="true" data-bs-content="
+                                <strong>Open:</strong> Assigned when an repair is initially created or received.<br>
+                                <strong>Pending:</strong> Assigned when an repair process has been stopped due to a replacement that is ongoing.<br>
+                                <strong>In Process:</strong> Assigned when an repair has moved beyond the initial stage and is being worked on.<br>
+                                <strong>Finished:</strong> Assigned when an repair has been completed successfully." data-bs-placement="right" title="Status Descriptions" data-bs-trigger="click">
+                                <i class="bi bi-question-circle"></i>
+                            </button>
+                        </div>
+                    </th>
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -297,27 +319,35 @@
         </script>
 
         <!-- Popup -->
+        
         <div id="cart-popup" class="cart-popup ">
             <div class="cart-content">
                 <h4>Work done</h4><br>
                 <label>Customer: </label>Jamie Dorito<br><br>
-                <h5>Job #1</h5><br>
-                <label>Attended by : </label>Eugene Wilson<br>
-                <label>Description : </label>A damaged or clogged muffler can affect engine performance and noise
-                levels.<br>
-                Inspecting and repairing the muffler and exhaust components can resolve these issues.<br>
-                <label>Date Start : </label> 2023-11-01 -- 14:05 pm<br>
-                <label>Date Stop : </label> 2023-11-01 -- 17:05 pm<br>
-                <label>Duration: </label> 3 hours y 0 minutes.<br><br>
-                <label>---------------------------------------------------------</label> <br>
-                <h5>Job #2</h5><br>
-                <label>Attended by : </label>Eugene Wilson<br>
-                <label>Description : </label>A damaged or clogged muffler can affect engine performance and noise
-                levels.<br>
-                Inspecting and repairing the muffler and exhaust components can resolve these issues.<br>
-                <label>Date Start : </label> 2023-11-01 -- 14:05 pm<br>
-                <label>Date Stop : </label> 2023-11-01 -- 17:05 pm<br>
-                <label>Duration: </label> 3 hours y 0 minutes.<br><br>
+                <button type="button" class="collapsible-btn" class="collapse show" onclick="toggleJobDetails('job1')">
+                    <h5>Job #1</h5><i id="icon-job1" class="bi bi-caret-right"></i></button>
+                <div id="job1" class="collapsible-content">
+                    <label>Attended by : </label>Eugene Wilson<br>
+                    <label>Description : </label>A damaged or clogged muffler can affect engine performance and noise
+                    levels.<br>
+                    Inspecting and repairing the muffler and exhaust components can resolve these issues.<br>
+                    <label>Date Start : </label> 2023-11-01 -- 14:05 pm<br>
+                    <label>Date Stop : </label> 2023-11-01 -- 17:05 pm<br>
+                    <label>Duration: </label> 3 hours y 0 minutes.<br><br>
+                </div>
+
+                <button type="button" class="collapsible-btn" onclick="toggleJobDetails('job2')">
+                    <h5>Job #2</h5><i class="bi bi-caret-down"></i></button>
+                <div id="job2" class="collapsible-content">
+                    <label>Attended by : </label>Eugene Wilson<br>
+                    <label>Description : </label>A damaged or clogged muffler can affect engine performance and noise
+                    levels.<br>
+                    Inspecting and repairing the muffler and exhaust components can resolve these issues.<br>
+                    <label>Date Start : </label> 2023-11-01 -- 14:05 pm<br>
+                    <label>Date Stop : </label> 2023-11-01 -- 17:05 pm<br>
+                    <label>Duration: </label> 3 hours y 0 minutes.<br><br>
+                </div>
+        
                 <div class="btn-detail-close">
                     <button id="close-cart-btn" class="button">Close</button>
                 </div>
@@ -325,8 +355,39 @@
         </div>
         <!-- End Popup -->
 
+        <script>
+            $(document).ready(function () {
+                // Initialize popovers for the "Status" column header
+                $('[data-bs-toggle="popover"]').popover({
+                    trigger: 'hover',  // Show on hover
+                    placement: 'top',  // Show above the element
+                    html: true          // Enable HTML content in the popover
+                });
+            });
+        </script>
+        
+        
+        
         <!-- Java script for cart popup -->
         <script src="js/cart_popup.js"></script>
+        <script>
+            var userRole = localStorage.getItem("role");
+      
+            
+            if (userRole  === "sales") {
+              $("#dashboard-menu").hide();
+              $("#maintain-menu").hide();
+              $("#reports-menu").hide();
+              $("#repairs-menu").hide();
+              }else if (userRole  === "admin") {
+      
+              } else if (userRole  === "technician") {
+              $("#dashboard-menu").hide();
+              $("#maintain-menu").hide();
+              $("#reports-menu").hide();
+              $("#customer-menu").hide();
+              }       
+        </script>
 
     </main>
     <footer class="footer">
