@@ -23,6 +23,21 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
   <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+  <!-- for Reports in PDF-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.6/jspdf.plugin.autotable.min.js"></script>
+  <script src="assets/js/jspdf-autotable-custom.js"></script>
+  <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
+
+
+  <!-- For collapsible dataTable-->
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+  <link href="https://nightly.datatables.net/css/jquery.dataTables.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.js"></script>
+  <script src="https://cdn.datatables.net/select/1.2.1/js/dataTables.select.min.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -146,124 +161,194 @@
     </nav>
     
 
-    <!-- Customer table body -->
+
     <div class="navbar-dark">
       <div class=" list-top">
         <div class=" list-top-flex">
-          <p class="main-title">Province List</p>
-          <button id="newCustomer" class="showPopup showPopupNew">New</button>
+          <p class="main-title">User Activity Report</p>
         </div>
       </div>
     </div>
+    <button type="button" class="collapsible-btn-rep" class="collapse show" onclick="toggleJobDetails('job1')">
+      Filters<i id="icon-job1" class="bi bi-caret-right"></i></button>
+    <div id="job1" class="collapsible-content">
+    <!-- Formulario para seleccionar la fecha -->
+    <div class="navbar-dark">
+      <div class=" list-top">
+        <form id="reportForm" class="form">
+          <div class="form_group">
+            <label for="StartDate" class="form_label">Start Date:</label>
+            <div class="group-input">
+              <input type="date" class="form_input" value="2023-11-01" id="StartDate" name="date" required>
+            </div>
+          </div>
+          <div class="form_group">
+            <label for="EndDate" class="form_label">End Date:</label>
+            <div class="group-input">
+              <input type="date" class="form_input" value="2023-11-30" id="EndDate" name="date" required>
+            </div>
+          </div>
+          <div class="form_group">
+            <label for="user" class="form_label">User</label>
+            <a href="#" class="showPopup btn-add" id="link-button">
+            </a>
+            <div class="group-input">
+                <select id="user" class="form_input" name="user" required>
+                  <option value="">Select a User</option>
+                  <option value="">EJohnson01</option>
+                  <option value="">WRodriguez02</option>
+                  <option value="">WMitchell03</option>
+                  <option value="">SThompson04</option>
+                  <option value="">EParker05</option>
+                  <option value="">ESanchez06</option>
+                  <option value="">AAnderson07</option>
+                </select>
+              </div>
+          </div>
+          <div class="form_group">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <label class="form-check-label" for="flexRadioDefault1">
+                  Log in 
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <label class="form-check-label" for="flexRadioDefault1">
+                  Log out
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <label class="form-check-label" for="flexRadioDefault1">
+                  All 
+                </label>
+            </div>
+              
+          </div>
+          <div class="group_btn button-container goback">
+            <button type="button" class="save" onclick="generateReport()">View</button>
+            <button type="button" class="save" onclick="exportReport()">Export</button>
+          </div>
 
-    <!-- Table -->
-    <table id="provinceTable" class="table table-hover">
-      <thead class="table-light">
-        <tr>
-          <th>Name</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Ontario</td>
-          <td>
-            <button class="showPopup2">Edit</button>
-          </td>
-        </tr>
-        <tr>
-          <td>Quebec</td>
-          <td>
-            <button class="showPopup2">Edit</button>
-          </td>
-        </tr>
-        <tr>
-          <td>British Columbia</td>
-          <td>
-            <button class="showPopup2">Edit</button>
-          </td>
-        </tr>
-        <tr>
-          <td>Alberta</td>
-          <td>
-            <button class="showPopup2">Edit</button>
-          </td>
-        </tr>
-        <tr>
-          <td>Manitoba</td>
-          <td>
-            <button class="showPopup2">Edit</button>
-          </td>
-        </tr>
-        <tr>
-          <td>Saskatchewan</td>
-          <td>
-            <button class="showPopup2">Edit</button>
-          </td>
-        </tr>
-        <tr>
-          <td>Nova Scotia</td>
-          <td>
-            <button class="showPopup2">Edit</button>
-          </td>
-        </tr>
-        <tr>
-          <td>New Brunswick</td>
-          <td>
-            <button class="showPopup2">Edit</button>
-          </td>
-        </tr>
-        <tr>
-          <td>Prince Edward Island</td>
-          <td>
-            <button class="showPopup2">Edit</button>
-          </td>
-        </tr>
-        <tr>
-          <td>Newfoundland and Labrador</td>
-          <td>
-            <button class="showPopup2">Edit</button>
-          </td>
-        </tr>
+        </form>
+      </div>
+    </div>
+</div>
+    <!-- Aquí se mostrará el informe generado en un DataTable -->
+    <div class="list-top" id="reportTableContainer" style="display: none;">
+      <table id="reportTable" class="table table-hover display" width="100%">
+        <thead class="table-light">
+          <tr>
+            
+            <th>User Name</th>
+            <th>Full Name</th>
+            <th>Time Log in</th>
+            <th>Time Log out</th>
+            <th>Duration</th>
+            <th>Role</th>
+          </tr>
+        </thead>
+        <tfoot>
+          <tr>
+            
+            <th>User Name</th>
+            <th>Full Name</th>
+            <th>Time Log in</th>
+            <th>Time Log out</th>
+            <th>Duration</th>
+            <th>Role</th>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+    <div class="activity_report">
+      <table id="reportTablepdf" style="display: none;">
+        <thead>
+          <tr>
+            <th>User Name</th>
+            <th>Full Name</th>
+            <th>Time Log in</th>
+            <th>Time Log out</th>
+            <th>Duration</th>
+            <th>Role</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>EJohnson01</td>
+            <td>Emma Johnson</td>
+            <td>2023-11-30 8:30am</td>
+            <td>2023-11-30 4:30pm</td>
+            <td>8 hrs</td>
+            <td>Admin</td>
+          </tr>
+          <tr>
+            <td>WRodriguez02</td>
+            <td>Wendy Rodriguez</td>
+            <td>2023-11-28 8:30am</td>
+            <td>2023-11-28 4:30am</td>
+            <td>2 hrs</td>
+            <td>Sales</td>
+          </tr>
+          <tr>
+            <td>WMitchell03</td>
+            <td>William Mitchell</td>
+            <td>2023-11-08 8:30am</td>
+            <td>2023-11-08 4:30am</td>
+            <td>8 hrs</td>
+            <td>Sales</td>
+          </tr>
+          <tr>
+            <td>SThompson04</td>
+            <td>Sam Thompson</td>
+            <td>2023-11-18 8:30am</td>
+            <td>2023-11-18 4:30am</td>
+            <td>8 hrs</td>
+            <td>Ordering and Purchasing</td>
+          </tr>
+          <tr>
+            <td>EParker05</td>
+            <td>Emily Parker</td>
+            <td>2023-11-18 8:30am</td>
+            <td>2023-11-18 4:30am</td>
+            <td>8 hrs</td>
+            <td>Admin</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
-      </tbody>
-    </table>
-   
-    <!-- Initiatize DatatABLE -->
+
+
+    <!-- Agrega los enlaces a los archivos JS de Bootstrap, DateTimePicker, DataTables y Date Range Picker -->
+    <!-- script for reports-->
+    <script src="js/search.js"></script>
+    <script src="js/cart_popup.js"></script>
+    <script src="js/activity_report_table.js"></script>
+    <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/dataTables.bootstrap4.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="js/activity_report.js"></script>
     <script>
-      new DataTable('#provinceTable', {
-        lengthMenu: [
-          [5, 10, 25, 50, -1],
-          [5, 10, 25, 50, 'All']
-        ]
-      });
+
+
+      // Función para generar el informe y mostrarlo en el DataTable
+      function generateReport() {
+        // Obtiene la fecha seleccionada por el usuario
+        var date = $('#StartDate').val();
+        var date = $('#EndDate').val();
+        var date = $('#user').val();
+
+        // Muestra la tabla
+        $('#reportTableContainer').show();
+     }
+      
     </script>
-
-
-
-    <!-- Popup for New Province-->
-    <div class="overlay" id="overlay"></div>
-    <div class="popup" id="popup">
-      <h2>Add a Province</h2>
-      <label for="province">Name:</label>
-      <input type="text" id="province" required>
-      <button class="save" id="closePopup">Save</button>
-      <button class="cancel" id="closePopup2">Cancel</button>
-    </div>
-    <!-- End Popup -->
-
-
-    <!-- Popup for Edit Province-->
-    <div class="overlay2" id="overlay2"></div>
-    <div class="popup2" id="popup2">
-      <h2>Edit a Province</h2>
-      <label for="province">Name:</label>
-      <input type="text" id="city" value="Ontario" required>
-      <button class="save" id="closePopupEdit">Save</button>
-      <button class="cancel" id="closePopupEdit2">Cancel</button>
-    </div>
-    <!-- End Popup -->
-    <script src="js/popup.js"></script>
 
   </main>
   <footer class="footer">
@@ -274,10 +359,6 @@
           href="mailto:info@emmasengines.com">info@emmasengines.com</a></p>
     </div>
   </footer>
-  <script src="js/form_equipment.js"></script>
-  <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
 </body>
 
 </html>

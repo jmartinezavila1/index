@@ -42,14 +42,36 @@ showButtons.forEach(function(button) {
     });
 });
 
+// Function to show the popup
+const showButtons2 = document.querySelectorAll(".showPopup3");
+showButtons2.forEach(function(button) {
+    button.addEventListener("click", function() {
+        document.getElementById("overlay3").style.display = "block";
+        document.getElementById("popup3").style.display = "block";
+    });
+});
+
 
 // Function to close the popup
 document.getElementById("closePopup").addEventListener("click", function() {
     document.getElementById("overlay").style.display = "none";
     document.getElementById("popup").style.display = "none";
 });
+
 document.getElementById("closePopup2").addEventListener("click", function() {
     document.getElementById("overlay").style.display = "none";
     document.getElementById("popup").style.display = "none";
+});
+
+
+document.getElementById("closePopup3").addEventListener("click", function() {
+    document.getElementById("overlay3").style.display = "none";
+    document.getElementById("popup3").style.display = "none";
+});
+
+
+document.getElementById("closePopup4").addEventListener("click", function() {
+    document.getElementById("overlay3").style.display = "none";
+    document.getElementById("popup3").style.display = "none";
 });
 

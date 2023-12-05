@@ -2,314 +2,362 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emma's Small Engine</title>
-    <!--Bootstrap-->
-    <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/navbars/">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <!-- Fonts-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;800&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,300,0,0" />
-    <!-- css-->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
-    <!--DataTable-->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
-    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emma's Small Engine</title>
 
-    <!-- Bootstrap for searching -->
-    <!-- Typeahead.js CSS -->
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.1/bootstrap3-typeahead.min.css">
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <!-- Bootstrap JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <!-- Typeahead.js -->
-    <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.1/bootstrap3-typeahead.min.js"></script>
+  <!-- Compiled and minified CSS -->
+  <!--Bootstrap-->
+  <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/navbars/">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <!-- Fonts-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,300,0,0" />
+  <!-- css-->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+  <!--DataTable-->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+  <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+  <!-- Bootstrap for searching -->
+  <!-- Typeahead.js CSS -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.1/bootstrap3-typeahead.min.css">
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <!-- Bootstrap JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!-- Typeahead.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.1/bootstrap3-typeahead.min.js"></script>
+
 </head>
 
 <body>
-    <header class="bg-grey">
-        <!-- Nav Menu-->
-        <div class="container-fluid ">
-            <nav class="navbar navbar-expand-lg navbar-light navbar-top-flex">
-                <a class="navbar-brand" href="index.html">
-                    <div class="icon-flex">
-                        <img src="images/logo1.png" alt="company logo">
-                        <span id="logo">Emma's Small Engine</span>
-                    </div>
-                </a>
-                <!-- <div class="collapse navbar-collapse" id="navbarNav"> -->
-                <div id="navbarNav navbar-top-icon-flex ">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="accountDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="icon-top bi bi-gear-fill" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
-                                data-bs-title="Manage account settings and support."></i>
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="accountDropdown">
-                                <a class="dropdown-item" href="#">Setting</a>
-                                <a class="dropdown-item" href="#">help</a>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="adminDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="icon-top bi bi-people-fill" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
-                                data-bs-title="Manage profile and log out."></i>
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="adminDropdown">
-                                <a class="dropdown-item" href="#">Profile</a>
-                                <a class="dropdown-item" href="#">Logout</a>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
+  <header class="bg-grey">
+    <!-- Nav Menu-->
+    <div class="container-fluid ">
+      <nav class="navbar navbar-expand-lg navbar-light navbar-top-flex">
+        <a class="navbar-brand" href="index.html">
+          <div class="icon-flex">
+            <img src="images/logo1.png" alt="company logo">
+            <span id="logo">Emma's Small Engine</span>
+          </div>
+        </a>
+        <!-- <div class="collapse navbar-collapse" id="navbarNav"> -->
+        <div id="navbarNav navbar-top-icon-flex ">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="accountDropdown" role="button" data-bs-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <i class="icon-top bi bi-gear-fill" data-bs-toggle="tooltip" data-bs-placement="top"
+                  data-bs-custom-class="custom-tooltip" data-bs-title="Manage account settings and support."></i>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="accountDropdown">
+                <a class="dropdown-item" href="#">Setting</a>
+                <a class="dropdown-item" href="#">help</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="adminDropdown" role="button" data-bs-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <i class="icon-top bi bi-people-fill" data-bs-toggle="tooltip" data-bs-placement="top"
+                  data-bs-custom-class="custom-tooltip" data-bs-title="Manage profile and log out."></i>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="adminDropdown">
+                <a class="dropdown-item" href="#">Profile</a>
+                <a class="dropdown-item" href="login.html">Logout</a>
+              </div>
+            </li>
+          </ul>
         </div>
-        <!-- End Sub Menu-->
-    </header>
+      </nav>
+    </div>
+    <!-- End Sub Menu-->
+  </header>
 
-    <main>
-        <nav class="navbar navbar-expand-lg navbar-dark" aria-label="Fifth navbar example">
-            <div class="container-fluid">
-                <div class="collapse navbar-collapse" id="navbarsExample05">
-                    <div>
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <div>
-                                <li class="nav-item">
-                                    <a class="nav-link" aria-current="page" href="index.html">
-                                        <i class="icon-bottom bi bi-speedometer"></i>Dashboard</a>
-                                </li>
-                            </div>
-                            <div class="boder-left">
-                                <li class="nav-item">
-                                    <a class="nav-link" aria-current="page" href="customer.html">
-                                        <i class="icon-bottom bi bi-file-person-fill"></i>Customer</a>
-                                </li>
-                            </div>
-                            <div class="boder-left">
-                                <li class="nav-item">
-                                    <a class="nav-link" aria-current="page" href="list_repairs.html">
-                                        <i class="icon-bottom bi bi-tools"></i>Repairs </a>
-                                </li>
-                            </div>
-                            <div class="boder-left">
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="dropdown05"
-                                        data-bs-toggle="dropdown" aria-expanded="false">
-                                        <i class="icon-bottom bi bi-person-fill-gear"></i>Maintain</a>
-                                    <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown05">
-                                        <li><a class="dropdown-item" href="#"> Customer &raquo; </a>
-                                            <ul class="submenu dropdown-menu">
-                                                <li><a class="dropdown-item" href="city.html">City</a></li>
-                                                <li><a class="dropdown-item" href="province.html">Province</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a class="dropdown-item" href="#"> Equipment &raquo; </a>
-                                            <ul class="submenu dropdown-menu">
-                                                <li><a class="dropdown-item" href="color.html">Color</a></li>
-                                                <li><a class="dropdown-item" href="manufacture.html">Manufactrer</a>
-                                                </li>
-                                                <li><a class="dropdown-item" href="type.html">Type</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a class="dropdown-item" href="#"> Repair &raquo; </a>
-                                            <ul class="submenu dropdown-menu">
-                                                <li><a class="dropdown-item" href="parts.html">Parts</a></li>
-                                                <li><a class="dropdown-item" href="technician.html">Technicians</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </div>
-                        </ul>
-                    </div>
-                    <!--Search by Customer -->
-                    <div class="search-bar">
-                        <input type="search" placeholder="Search by Customer" id="searchInput">
-                        <button type="button" class="search-button" onclick="performSearch()">
-                            <i class="bi bi-search"></i>
-                        </button>
-                        
-                    </div>
-                   
-                </div>               
+  <main>
+
+    <nav class="navbar navbar-expand-lg navbar-dark" aria-label="Fifth navbar example">
+      <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="navbarsExample05">
+          <div>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <div id="dashboard-menu">
+                <li class="nav-item">
+                  <a id="dashboard-link" class="nav-link" aria-current="page" href="index.html">
+                    <i class="icon-bottom bi bi-speedometer"></i>Dashboard</a>
+                </li>
+              </div>
+              <div id="customer-menu" class="boder-left">
+                <li class="nav-item">
+                  <a id="customer-link" class="nav-link" aria-current="page" href="customer.html">
+                    <i class="icon-bottom bi bi-file-person-fill"></i>Customer</a>
+                </li>
+              </div>
+              <div id="repairs-menu" class="boder-left">
+                <li class="nav-item">
+                  <a id="repairs-link" class="nav-link" aria-current="page" href="list_repairs.html">
+                    <i class="icon-bottom bi bi-tools"></i>Repairs</a>
+                </li>
+              </div>
+              <div id="maintain-menu" class="boder-left">
+                <li class="nav-item dropdown">
+                  <a id="maintain-link" class="nav-link dropdown-toggle" href="#" id="dropdown05"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="icon-bottom bi bi-person-fill-gear"></i>Maintain</a>
+                  <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown05">
+                    <!-- Add id to submenu items -->
+                    <li id="customer-submenu">
+                      <a class="dropdown-item" href="#"> Customer &raquo; </a>
+                      <ul class="submenu dropdown-menu">
+                        <li><a class="dropdown-item" href="city.html">City</a></li>
+                        <li><a class="dropdown-item" href="province.html">Province</a></li>
+                      </ul>
+                    </li>
+                    <li id="equipment-submenu">
+                      <a class="dropdown-item" href="#"> Equipment &raquo; </a>
+                      <ul class="submenu dropdown-menu">
+                        <li><a class="dropdown-item" href="color.html">Color</a></li>
+                        <li><a class="dropdown-item" href="manufacture.html">Manufacturer</a></li>
+                        <li><a class="dropdown-item" href="type.html">Type</a></li>
+                      </ul>
+                    </li>
+                    <li id="repair-submenu">
+                      <a class="dropdown-item" href="#"> Repair &raquo; </a>
+                      <ul class="submenu dropdown-menu">
+                        <li><a class="dropdown-item" href="parts.html">Parts</a></li>
+                        <li><a class="dropdown-item" href="technician.html">Technicians</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </div>
+              <div id="reports-menu" class="boder-left">
+                <li class="nav-item dropdown">
+                  <a id="reports-link" class="nav-link dropdown-toggle" href="#" id="dropdown05"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="icon-bottom bi bi-clipboard2-data-fill"></i>Reports</a>
+                  <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown05">
+                    <li><a id="warranty-report-link" class="dropdown-item" href="warranty_report.html"> Warranty&raquo;
+                      </a></li>
+                    <li><a id="repair-report-link" class="dropdown-item" href="repair_report.html"> Repairs &raquo; </a>
+                    </li>
+                    <li><a id="activity-report-link" class="dropdown-item" href="activity_report.html"> User Activity
+                        &raquo; </a></li>
+                  </ul>
+                </li>
+              </div>
+            </ul>
+          </div>
+          <!--Search by Customer -->
+          <div class="search-bar">
+            <input type="search" placeholder="Search by Customer" id="searchInput">
+            <button type="button" class="search-button" onclick="performSearch()">
+              <i class="bi bi-search"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <a href="#" class="btn btn-primary fixed-button showPopup show-cart-btn ">
+      <i class="bi bi-question" style="font-size: 1.5em;"></i>
+    </a>
+    <div class="container-wrap">
+      <div class="container">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <div class="col">
+            <div class="card border-success mb-3" style="max-width: 60rem;">
+              <div class="card-header bg-transparent border-success">
+                <h6 class="card-title">Customer</h6>
+              </div>
+              <div class="card-body text-success scrolling-div">
+                <a href="edit_customer.html">#2345 James Dean 2023-10-31</a><br>
+                <a href="edit_customer.html">#2345 James Dean 2023-10-31</a><br>
+                <a href="edit_customer.html">#2345 James Dean 2023-10-31</a><br>
+                <a href="edit_customer.html">#2345 James Dean 2023-10-31</a><br>
+                <a href="edit_customer.html">#2345 James Dean 2023-10-31</a><br>
+                <a href="edit_customer.html">#2345 James Dean 2023-10-31</a><br>
+                <a href="edit_customer.html">#2345 James Dean 2023-10-31</a><br>
+              </div>
+              <div class="card-footer bg-transparent border-success">
+                <a href="customer.html">Go to Customer</a>
+              </div>
             </div>
-        </nav>
+          </div>
 
-        <div class="container-wrap">
-            <div class="container">
-                <div class="row row-cols-1 row-cols-md-3 g-4">
-                    <div class="col">
-                        <div class="card border-success mb-3" style="max-width: 60rem;">
-                            <div class="card-header bg-transparent border-success">
-                                <h6 class="card-title">Customer</h6>
-                            </div>
-                            <div class="card-body text-success scrolling-div">
-                                <a href="edit_customer.html">#2345 James Dean 2023-10-31</a><br>
-                                <a href="edit_customer.html">#2345 James Dean 2023-10-31</a><br>
-                                <a href="edit_customer.html">#2345 James Dean 2023-10-31</a><br>
-                                <a href="edit_customer.html">#2345 James Dean 2023-10-31</a><br>
-                                <a href="edit_customer.html">#2345 James Dean 2023-10-31</a><br>
-                                <a href="edit_customer.html">#2345 James Dean 2023-10-31</a><br>
-                                <a href="edit_customer.html">#2345 James Dean 2023-10-31</a><br>
-                            </div>
-                            <div class="card-footer bg-transparent border-success">
-                                <a href="customer.html">Go to Customer</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col">
-                        <div class="card border-success mb-3" style="max-width: 60rem;">
-                            <div class="card-header bg-transparent border-success">
-                                <h6 class="card-title">Repair</h6>
-                            </div>
-                            <div class="card-body text-success scrolling-div">
-                                <a href="edit_repairs.html">#2345 James Dean 2023-10-31</a><br>
-                                <a href="edit_repairs.html">#2345 James Dean 2023-10-31</a><br>
-                                <a href="edit_repairs.html">#2345 James Dean 2023-10-31</a><br>
-                                <a href="edit_repairs.html">#2345 James Dean 2023-10-31</a><br>
-                                <a href="edit_repairs.html">#2345 James Dean 2023-10-31</a><br>
-                                <a href="edit_repairs.html">#2345 James Dean 2023-10-31</a><br>
-                                <a href="edit_repairs.html">#2345 James Dean 2023-10-31</a><br>
-                            </div>
-                            <div class="card-footer bg-transparent border-success">
-                                <a href="list_repairs.html">Go to Repair</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col">
-                        <div class="card border-success mb-3" style="max-width: 60rem;">
-                            <div class="card-header bg-transparent border-success">
-                                <h6 class="card-title">Reports</h6>
-                            </div>
-                            <div class="card-body text-success scrolling-div">
-                                <a href="edit_repairs.html">Warranty Report</a><br>
-                                <a href="edit_repairs.html">Weekly Review</a><br>
-                                <a href="edit_repairs.html">Sales</a><br>
-                            </div>
-                            <div class="card-footer bg-transparent border-success">
-                                <a href="#">Go to Reports</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+          <div class="col">
+            <div class="card border-success mb-3" style="max-width: 60rem;">
+              <div class="card-header bg-transparent border-success">
+                <h6 class="card-title">Repair</h6>
+              </div>
+              <div class="card-body text-success scrolling-div">
+                <a href="edit_repairs.html">#2345 James Dean 2023-10-31</a><br>
+                <a href="edit_repairs.html">#2345 James Dean 2023-10-31</a><br>
+                <a href="edit_repairs.html">#2345 James Dean 2023-10-31</a><br>
+                <a href="edit_repairs.html">#2345 James Dean 2023-10-31</a><br>
+                <a href="edit_repairs.html">#2345 James Dean 2023-10-31</a><br>
+                <a href="edit_repairs.html">#2345 James Dean 2023-10-31</a><br>
+                <a href="edit_repairs.html">#2345 James Dean 2023-10-31</a><br>
+              </div>
+              <div class="card-footer bg-transparent border-success">
+                <a href="list_repairs.html">Go to Repair</a>
+              </div>
             </div>
+          </div>
+
+          <div class="col">
+            <div class="card border-success mb-3" style="max-width: 60rem;">
+              <div class="card-header bg-transparent border-success">
+                <h6 class="card-title">Reports</h6>
+              </div>
+              <div class="card-body text-success scrolling-div">
+                <a href="warranty_report.html">Warranty Report</a><br>
+                <a href="repair_report.html">Repairs</a><br>
+                <a href="activity_report.html">User Activity</a><br>
+              </div>
+              <div class="card-footer bg-transparent border-success">
+                <a href="#">Go to Reports</a>
+              </div>
+            </div>
+          </div>
         </div>
-    </main>
+      </div>
+    </div>
+  </main>
 
-    <footer class="footer">
-        <div>
-            <p class="footer-text">2023 Emma's Small Engines. All rights reserved.</p>
-            <p class="footer-text">1234 Elm Street, Welland, Ontario Canada</p>
-            <p class="footer-text">Phone: (123) 456-7890 | Email: <a
-                    href="mailto:info@emmasengines.com">info@emmasengines.com</a></p>
-        </div>
-    </footer>
-    <!-- Code for tooltips -->
-    <script>
-        $(document).ready(function () {
-            $('[data-bs-toggle="tooltip"]').tooltip();
-        });
+  <footer class="footer">
+    <div>
+      <p class="footer-text">2023 Emma's Small Engines. All rights reserved.</p>
+      <p class="footer-text">1234 Elm Street, Welland, Ontario Canada</p>
+      <p class="footer-text">Phone: (123) 456-7890 | Email: <a
+          href="mailto:info@emmasengines.com">info@emmasengines.com</a></p>
+    </div>
+  </footer>
+  <!-- Popup -->
+  <div id="cart-popup" class="cart-popup-help">
+    <div class="cart-content">
+      <h6>Help</h6><br>
+      <div style="font-size: 24px;">
+        <label>Select a topic</label><br>
+      </div>
+      <!--//collapsible buttons-->
+      <button type="button" class="collapsible-btn" class="collapse show" onclick="toggleJobDetails('job1')">
+        Register a customer<i id="icon-job1" class="bi bi-caret-right"></i></button>
+      <div id="job1" class="collapsible-content">
+        <label>Account No.: </label>39838<br>
+        <label>Open: </label>2020-06-09<br>
+        <!-- <label>Name: </label>Sample Customer<br> -->
+        <label>Email: </label>customer@example.com<br>
+        <label>Phone: </label> 675-456-7890<br>
+        <label>Address: </label> 64 Chappel Hill<br>
+        <label>Province: </label> Ontario<br>
+      </div>
+      <button type="button" class="collapsible-btn" class="collapse show" onclick="toggleJobDetails('job2')">
+        Editing a customer<i id="icon-job2" class="bi bi-caret-right"></i></button>
+      <div id="job2" class="collapsible-content">
+        <label>Account No.: </label>39838<br>
+        <label>Open: </label>2020-06-09<br>
+        <!-- <label>Name: </label>Sample Customer<br> -->
+        <label>Email: </label>customer@example.com<br>
+        <label>Phone: </label> 675-456-7890<br>
+        <label>Address: </label> 64 Chappel Hill<br>
+        <label>Province: </label> Ontario<br>
+      </div>
+      <button type="button" class="collapsible-btn" class="collapse show" onclick="toggleJobDetails('job3')">
+        Adding Equipments to a Customer<i id="icon-job3" class="bi bi-caret-right"></i></button>
+      <div id="job3" class="collapsible-content">
+        <label>Account No.: </label>39838<br>
+        <label>Open: </label>2020-06-09<br>
+        <!-- <label>Name: </label>Sample Customer<br> -->
+        <label>Email: </label>customer@example.com<br>
+        <label>Phone: </label> 675-456-7890<br>
+        <label>Address: </label> 64 Chappel Hill<br>
+        <label>Province: </label> Ontario<br>
+      </div>
+      <button type="button" class="collapsible-btn" class="collapse show" onclick="toggleJobDetails('job4')">
+        Adding Repairs to a Customer <i id="icon-job4" class="bi bi-caret-right"></i></button>
+      <div id="job4" class="collapsible-content">
+        <label>Account No.: </label>39838<br>
+        <label>Open: </label>2020-06-09<br>
+        <!-- <label>Name: </label>Sample Customer<br> -->
+        <label>Email: </label>customer@example.com<br>
+        <label>Phone: </label> 675-456-7890<br>
+        <label>Address: </label> 64 Chappel Hill<br>
+        <label>Province: </label> Ontario<br>
+      </div>
+      <button type="button" class="collapsible-btn" class="collapse show" onclick="toggleJobDetails('job5')">
+        Creating a new Repair <i id="icon-job5" class="bi bi-caret-right"></i></button>
+      <div id="job5" class="collapsible-content">
+        <label>Account No.: </label>39838<br>
+        <label>Open: </label>2020-06-09<br>
+        <!-- <label>Name: </label>Sample Customer<br> -->
+        <label>Email: </label>customer@example.com<br>
+        <label>Phone: </label> 675-456-7890<br>
+        <label>Address: </label> 64 Chappel Hill<br>
+        <label>Province: </label> Ontario<br>
+      </div>
+      <button type="button" class="collapsible-btn" class="collapse show" onclick="toggleJobDetails('job6')">
+        Editing a repair <i id="icon-job6" class="bi bi-caret-right"></i></button>
+      <div id="job6" class="collapsible-content">
+        <label>Account No.: </label>39838<br>
+        <label>Open: </label>2020-06-09<br>
+        <!-- <label>Name: </label>Sample Customer<br> -->
+        <label>Email: </label>customer@example.com<br>
+        <label>Phone: </label> 675-456-7890<br>
+        <label>Address: </label> 64 Chappel Hill<br>
+        <label>Province: </label> Ontario<br>
+      </div>
+      <button type="button" class="collapsible-btn" class="collapse show" onclick="toggleJobDetails('job7')">
+        Adding jobs to a repair <i id="icon-job7" class="bi bi-caret-right"></i></button>
+      <div id="job7" class="collapsible-content">
+        <label>Account No.: </label>39838<br>
+        <label>Open: </label>2020-06-09<br>
+        <!-- <label>Name: </label>Sample Customer<br> -->
+        <label>Email: </label>customer@example.com<br>
+        <label>Phone: </label> 675-456-7890<br>
+        <label>Address: </label> 64 Chappel Hill<br>
+        <label>Province: </label> Ontario<br>
+      </div>
+      <button type="button" class="collapsible-btn" class="collapse show" onclick="toggleJobDetails('job7')">
+        Maintain Customers, Equipments and Repairs<i id="icon-job7" class="bi bi-caret-right"></i></button>
+      <div id="job7" class="collapsible-content">
+        <label>Account No.: </label>39838<br>
+        <label>Open: </label>2020-06-09<br>
+        <!-- <label>Name: </label>Sample Customer<br> -->
+        <label>Email: </label>customer@example.com<br>
+        <label>Phone: </label> 675-456-7890<br>
+        <label>Address: </label> 64 Chappel Hill<br>
+        <label>Province: </label> Ontario<br>
+      </div>
+
+      <div style="display: flex; justify-content: left;">
+        <button id="close-cart-btn" class="button" onclick="closeCartPopup()">Close</button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Code for tooltips -->
+  <script>
+    $(document).ready(function () {
+      $('[data-bs-toggle="tooltip"]').tooltip();
+    });
+  </script>
+  <!-- Scripts -->
+  <script src="js/search.js"></script>
+  <!-- Java script for cart popup -->
+  <script src="js/cart_help_popup.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
     </script>
-    <!-- Scripts -->
-    <script src="js/search.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
-    <script>
-        // JavaScript code for chart data and updates (use Chart.js or other charting libraries)
-        // Sample data for the sales chart
-        const salesData = {
-            labels: ['Sun', 'Mon', 'Tue', 'Wen', 'Thur', 'Fri', 'Sat'],
-            datasets: [{
-                label: 'Sales',
-                data: [50, 60, 70, 65, 80, 75, 90],
-                backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                borderColor: 'rgba(75, 192, 192, 1)',
-                borderWidth: 1
-            }]
-        };
-
-        // Sample data for the online store visits chart
-        const visitsData = {
-            labels: ['Sun', 'Mon', 'Tue', 'Wen', 'Thur', 'Fri', 'Sat'],
-            datasets: [{
-                label: 'Visits',
-                data: [100, 150, 120, 180, 140, 160, 130],
-                backgroundColor: 'rgba(255, 99, 132, 0.2)',
-                borderColor: 'rgba(255, 99, 132, 1)',
-                borderWidth: 1
-            }]
-        };
-
-        // Update product stock
-        const updateProductStock = () => {
-            const productStockElement = document.getElementById('productStock');
-            // Simulated data update
-            const newProductStock = Math.floor(Math.random() * 500);
-            productStockElement.textContent = newProductStock + ' Items';
-        };
-
-        // Update customer orders (add more orders dynamically)
-        const updateCustomerOrders = () => {
-            const customerOrdersElement = document.getElementById('customerOrders');
-            // Simulated data update (you can replace with real data)
-            const newOrder = 'New Order';
-            const li = document.createElement('li');
-            li.textContent = newOrder;
-            customerOrdersElement.appendChild(li);
-        };
-
-        // Create a chart using Chart.js for sales data
-        const salesCtx = document.getElementById('salesChart').getContext('2d');
-        const salesChart = new Chart(salesCtx, {
-            type: 'line',
-            data: salesData,
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                }
-            }
-        });
-
-        // Create a chart using Chart.js for online store visits data
-        const visitsCtx = document.getElementById('visitsChart').getContext('2d');
-        const visitsChart = new Chart(visitsCtx, {
-            type: 'line',
-            data: visitsData,
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                }
-            }
-        });
-
-        // Update data periodically (for demonstration)
-        setInterval(() => {
-            updateProductStock();
-            updateCustomerOrders();
-        }, 5000); // Update every 5 seconds
-    </script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
-        </script>
 
 </html>

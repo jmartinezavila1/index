@@ -5,21 +5,34 @@ showCartButtons.forEach((button, index) => {
         document.getElementById("cart-popup").style.display = "block";
     });
 });
-document.getElementById("close-cart-btn").addEventListener("click", function () {
-    document.getElementById("cart-popup").style.display = "none";
-});
+
 
 const showCartButtons1 = document.querySelectorAll(".show-cart-btn1");
 
 showCartButtons.forEach((button, index) => {
     button.addEventListener("click", function () {
-        document.getElementById("cart-popup1").style.display = "block";
+        document.getElementById("cart-popup").style.display = "block";
     });
 });
-document.getElementById("close-cart-btn1").addEventListener("click", function () {
-    document.getElementById("cart-popup1").style.display = "none";
-});
 
+// Función para cerrar el popup
+function closeCartPopup() {
+    var cartPopup = document.getElementById('cart-popup');
+    cartPopup.style.display = 'none';
+
+    // Guardar estado del popup en sessionStorage
+    sessionStorage.setItem('popupClosed', 'true');
+  }
+
+  // Verificar si sessionStorage indica que el popup debe cerrarse
+  window.onload = function() {
+    var popupClosed = sessionStorage.getItem('popupClosed');
+
+    if (!popupClosed) {
+      var cartPopup = document.getElementById('cart-popup');
+      cartPopup.style.display = 'block';
+    }
+  };
 // to make the jobs Collapsible
 
 function toggleJobDetails(jobId) {

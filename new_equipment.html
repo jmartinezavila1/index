@@ -57,7 +57,7 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="adminDropdown">
                                 <a class="dropdown-item" href="#">Profile</a>
-                                <a class="dropdown-item" href="#">Logout</a>
+                                <a class="dropdown-item" href="login.html">Logout</a>
                             </div>
                         </li>
                     </ul>
@@ -69,68 +69,82 @@
     <main>
         <nav class="navbar navbar-expand-lg navbar-dark" aria-label="Fifth navbar example">
             <div class="container-fluid">
-                <div class="collapse navbar-collapse" id="navbarsExample05">
-                    <div>
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <div>
-                                <li class="nav-item">
-                                    <a class="nav-link" aria-current="page" href="index.html">
-                                        <i class="icon-bottom bi bi-speedometer"></i>Dashboard</a>
-                                </li>
-                            </div>
-                            <div class="boder-left">
-                                <li class="nav-item">
-                                    <a class="nav-link" aria-current="page" href="customer.html">
-                                        <i class="icon-bottom bi bi-file-person-fill"></i>Customer</a>
-                                </li>
-                            </div>
-                            <div class="boder-left">
-                                <li class="nav-item">
-                                    <a class="nav-link" aria-current="page" href="list_repairs.html">
-                                        <i class="icon-bottom bi bi-tools"></i>Repairs </a>
-                                </li>
-                            </div>
-                            <div class="boder-left">
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="dropdown05"
-                                        data-bs-toggle="dropdown" aria-expanded="false">
-                                        <i class="icon-bottom bi bi-person-fill-gear"></i>Maintain</a>
-                                    <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown05">
-                                        <li><a class="dropdown-item" href="#"> Customer &raquo; </a>
-                                            <ul class="submenu dropdown-menu">
-                                                <li><a class="dropdown-item" href="city.html">City</a></li>
-                                                <li><a class="dropdown-item" href="province.html">Province</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a class="dropdown-item" href="#"> Equipment &raquo; </a>
-                                            <ul class="submenu dropdown-menu">
-                                                <li><a class="dropdown-item" href="color.html">Color</a></li>
-                                                <li><a class="dropdown-item" href="manufacture.html">Manufactrer</a>
-                                                </li>
-                                                <li><a class="dropdown-item" href="type.html">Type</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a class="dropdown-item" href="#"> Repair &raquo; </a>
-                                            <ul class="submenu dropdown-menu">
-                                                <li><a class="dropdown-item" href="parts.html">Parts</a></li>
-                                                <li><a class="dropdown-item" href="technician.html">Technicians</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </div>
+              <div class="collapse navbar-collapse" id="navbarsExample05">
+                <div>
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <div id="dashboard-menu">
+                      <li class="nav-item">
+                        <a id="dashboard-link" class="nav-link" aria-current="page" href="index.html">
+                          <i class="icon-bottom bi bi-speedometer"></i>Dashboard</a>
+                      </li>
+                    </div>
+                    <div id="customer-menu" class="boder-left">
+                      <li class="nav-item">
+                        <a id="customer-link" class="nav-link" aria-current="page" href="customer.html">
+                          <i class="icon-bottom bi bi-file-person-fill"></i>Customer</a>
+                      </li>
+                    </div>
+                    <div id="repairs-menu" class="boder-left">
+                      <li class="nav-item">
+                        <a id="repairs-link" class="nav-link" aria-current="page" href="list_repairs.html">
+                          <i class="icon-bottom bi bi-tools"></i>Repairs</a>
+                      </li>
+                    </div>
+                    <div id="maintain-menu" class="boder-left">
+                      <li class="nav-item dropdown">
+                        <a id="maintain-link" class="nav-link dropdown-toggle" href="#" id="dropdown05" data-bs-toggle="dropdown" aria-expanded="false">
+                          <i class="icon-bottom bi bi-person-fill-gear"></i>Maintain</a>
+                        <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown05">
+                          <!-- Add id to submenu items -->
+                          <li id="customer-submenu">
+                            <a class="dropdown-item" href="#"> Customer &raquo; </a>
+                            <ul class="submenu dropdown-menu">
+                              <li><a class="dropdown-item" href="city.html">City</a></li>
+                              <li><a class="dropdown-item" href="province.html">Province</a></li>
+                            </ul>
+                          </li>
+                          <li id="equipment-submenu">
+                            <a class="dropdown-item" href="#"> Equipment &raquo; </a>
+                            <ul class="submenu dropdown-menu">
+                              <li><a class="dropdown-item" href="color.html">Color</a></li>
+                              <li><a class="dropdown-item" href="manufacture.html">Manufacturer</a></li>
+                              <li><a class="dropdown-item" href="type.html">Type</a></li>
+                            </ul>
+                          </li>
+                          <li id="repair-submenu">
+                            <a class="dropdown-item" href="#"> Repair &raquo; </a>
+                            <ul class="submenu dropdown-menu">
+                              <li><a class="dropdown-item" href="parts.html">Parts</a></li>
+                              <li><a class="dropdown-item" href="technician.html">Technicians</a></li>
+                            </ul>
+                          </li>
                         </ul>
+                      </li>
                     </div>
-                    <!-- Crisina: Search by Customer -->
-                    <div class="search-bar">
-                        <input type="search" placeholder="Search by Customer">
-                        <button type="button" class="search-button">
-                            <i class="bi bi-search"></i>
-                        </button>
+                    <div id="reports-menu" class="boder-left">
+                      <li class="nav-item dropdown">
+                        <a id="reports-link" class="nav-link dropdown-toggle" href="#" id="dropdown05" data-bs-toggle="dropdown" aria-expanded="false">
+                          <i class="icon-bottom bi bi-clipboard2-data-fill"></i>Reports</a>
+                        <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown05">
+                          <li><a id="warranty-report-link" class="dropdown-item" href="warranty_report.html"> Warranty&raquo; </a></li>
+                          <li><a id="repair-report-link" class="dropdown-item" href="repair_report.html"> Repairs &raquo; </a></li>
+                          <li><a id="activity-report-link" class="dropdown-item" href="activity_report.html"> User Activity &raquo; </a></li>
+                        </ul>
+                      </li>
                     </div>
+                  </ul>
                 </div>
+                <!--Search by Customer -->
+                <div class="search-bar">
+                  <input type="search" placeholder="Search by Customer" id="searchInput">
+                  <button type="button" class="search-button" onclick="performSearch()">
+                    <i class="bi bi-search"></i>
+                  </button>
+                </div>
+              </div>
             </div>
-        </nav>
+          </nav>
+          
 
         <div class="navbar-dark">
             <div class="list-top">
@@ -280,6 +294,17 @@
                     </select>
                 </div>
             </div>
+                  <!-- warranty-->
+            <div class="form_group">
+                    <label for="type" class="form_label">Warranty</label>
+                    <a href="#"  id="link-button">
+
+                    </a>
+                  
+                  <div>
+                    <input type="button" value="Add" class="showPopup3"> 
+                </div> 
+            </div>
             <!-- Buttons -->
             <div class="group_btn button-container goback">
                 <input type="submit" onclick="location.href='equipment.html'" class="cancel" value="Back">
@@ -287,11 +312,6 @@
                 <input type="reset" onclick="location.href='equipment.html'" class="cancel" value="Cancel">
             </div>
         </form>
-
-        <!-- Message -->
-        <div id="message" style="display: none;" class="group_btn">
-            <p>Equipment successfully Edited!.</p>
-        </div>
         <!-- <a href="customer.html" id="bottom_form" id="link-button">Go Back to Equipment List</a> -->
 
         <!-- Popup -->
@@ -303,7 +323,31 @@
             <button class="cancel" id="closePopup2">Cancel</button>
         </div>
         <!-- End Popup -->
+
+        <!-- Popup for warranty -->
+        <div class="overlay" id="overlay3"></div>
+        <div class="popup" id="popup3">
+            <h5>Does this product have a warranty?</h5>
+            <label for="provinceInput">Number:</label>
+            <input type="text" id="number">
+            <button class="save" id="closePopup3">Save</button>
+            <button class="cancel" id="closePopup4">Cancel</button>
+        </div>
+        <!-- End Popup -->
     </main>
+    <script>
+        var userRole = localStorage.getItem("role");
+  
+        
+        if (userRole  === "sales") {
+          $("#dashboard-menu").hide();
+          $("#maintain-menu").hide();
+          $("#reports-menu").hide();
+          $("#repairs-menu").hide();
+          }else if (userRole  === "admin") {
+  
+          }        
+    </script>
     <footer class="footer">
         <div>
             <p class="footer-text">2023 Emma's Small Engines. All rights reserved.</p>

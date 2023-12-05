@@ -23,6 +23,21 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
   <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+  <!-- for Reports in PDF-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.6/jspdf.plugin.autotable.min.js"></script>
+  <script src="assets/js/jspdf-autotable-custom.js"></script>
+  <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
+
+
+  <!-- For collapsible dataTable-->
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+  <link href="https://nightly.datatables.net/css/jquery.dataTables.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.js"></script>
+  <script src="https://cdn.datatables.net/select/1.2.1/js/dataTables.select.min.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -146,124 +161,172 @@
     </nav>
     
 
-    <!-- Customer table body -->
+
     <div class="navbar-dark">
       <div class=" list-top">
         <div class=" list-top-flex">
-          <p class="main-title">Province List</p>
-          <button id="newCustomer" class="showPopup showPopupNew">New</button>
+          <p class="main-title">Warranty Report</p>
         </div>
       </div>
     </div>
+    <!--//collapsible buttons-->
+    <button type="button" class="collapsible-btn-rep" class="collapse show" onclick="toggleJobDetails('job1')">
+      Filters<i id="icon-job1" class="bi bi-caret-right"></i></button>
+    <div id="job1" class="collapsible-content">
+      <!-- Formulario para seleccionar la fecha -->
+    <div class="navbar-dark">
+      <div class=" list-top">
+        <form id="reportForm" class="form">
+          <div class="form_group">
+            <label for="StartDate" class="form_label">Start Date:</label>
+            <div class="group-input">
+              <input type="date" class="form_input" value="2023-11-01" id="StartDate" name="date" required>
+            </div>
+          </div>
+          <div class="form_group">
+            <label for="EndDate" class="form_label">End Date:</label>
+            <div class="group-input">
+              <input type="date" class="form_input" value="2023-11-30" id="EndDate" name="date" required>
+            </div>
+          </div>
+          <div class="form_group">
+            <label for="company" class="form_label">Company</label>
+            <a href="#" class="showPopup btn-add" id="link-button">
+            </a>
+            <div class="group-input">
+              <select id="company" class="form_input" name="company" required>
+                <option value="">Select a Company</option>
+                <option value="">Briggs & Stratton Corporation</option>
+                <option value="">Husqvarna Group</option>
+                <option value="">John Deere</option>
+                <option value="">Toro</option>
+                <option value="">Craftsman</option>
+                <option value="">Snapper</option>
+              </select>
+            </div>
+          </div>
+          <div class="group_btn button-container goback">
+            <button type="button" class="save" onclick="generateReport()">View</button>
+            <button type="button" class="save" onclick="exportReport()">Export</button>
+          </div>
 
-    <!-- Table -->
-    <table id="provinceTable" class="table table-hover">
-      <thead class="table-light">
-        <tr>
-          <th>Name</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Ontario</td>
-          <td>
-            <button class="showPopup2">Edit</button>
-          </td>
-        </tr>
-        <tr>
-          <td>Quebec</td>
-          <td>
-            <button class="showPopup2">Edit</button>
-          </td>
-        </tr>
-        <tr>
-          <td>British Columbia</td>
-          <td>
-            <button class="showPopup2">Edit</button>
-          </td>
-        </tr>
-        <tr>
-          <td>Alberta</td>
-          <td>
-            <button class="showPopup2">Edit</button>
-          </td>
-        </tr>
-        <tr>
-          <td>Manitoba</td>
-          <td>
-            <button class="showPopup2">Edit</button>
-          </td>
-        </tr>
-        <tr>
-          <td>Saskatchewan</td>
-          <td>
-            <button class="showPopup2">Edit</button>
-          </td>
-        </tr>
-        <tr>
-          <td>Nova Scotia</td>
-          <td>
-            <button class="showPopup2">Edit</button>
-          </td>
-        </tr>
-        <tr>
-          <td>New Brunswick</td>
-          <td>
-            <button class="showPopup2">Edit</button>
-          </td>
-        </tr>
-        <tr>
-          <td>Prince Edward Island</td>
-          <td>
-            <button class="showPopup2">Edit</button>
-          </td>
-        </tr>
-        <tr>
-          <td>Newfoundland and Labrador</td>
-          <td>
-            <button class="showPopup2">Edit</button>
-          </td>
-        </tr>
+        </form>
+      </div>
+    </div>
 
-      </tbody>
-    </table>
-   
-    <!-- Initiatize DatatABLE -->
+
+    </div>
+    
+
+    <!-- Aquí se mostrará el informe generado en un DataTable -->
+    <div  id="reportTableContainer" style="display: none;">
+      <table id="reportTable" class="table table-hover display" width="100%">
+        <thead class="table-light">
+          <tr>
+            <th></th>
+            <th>Company Name</th>
+            <th>Warranties</th>
+            <th>AVG Duration</th>
+            <th>Customers Served</th>
+            <th>Cost</th>
+          </tr>
+        </thead>
+        <tfoot>
+          <tr>
+            <th></th>
+            <th>Company Name</th>
+            <th>Warranties</th>
+            <th>AVG Duration</th>
+            <th>Customers Served</th>
+            <th>Cost</th>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+
+    <div class="warranty_report">
+      <table id="reportTablepdf"  class="table table-hover" style="display: none;">
+        <thead class="table-light">
+          <tr>
+            <th>Company Name</th>
+            <th>Warranties</th>
+            <th>AVG Duration</th>
+            <th>Customers Served</th>
+            <th>Cost</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Briggs & Stratton Corporation</td>
+            <td>3</td>
+            <td>23 hrs</td>
+            <td>3</td>
+            <td>$50.00</td>
+          </tr>
+          <tr>
+            <td>Husqvarna Group</td>
+            <td>2</td>
+            <td>45 hrs</td>
+            <td>2</td>
+            <td>$600.00</td>
+          </tr>
+          <tr>
+            <td>John Deere</td>
+            <td>3</td>
+            <td>6 hrs</td>
+            <td>3</td>
+            <td>$300.00</td>
+          </tr>
+          <tr>
+            <td>Toro</td>
+            <td>5</td>
+            <td>18 hrs</td>
+            <td>5</td>
+            <td>$1000.00</td>
+          </tr>
+          <tr>
+            <td>HCraftsman</td>
+            <td>2</td>
+            <td>5 hrs</td>
+            <td>2</td>
+            <td>$200.00</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+
+    <!-- Agrega los enlaces a los archivos JS de Bootstrap, DateTimePicker, DataTables y Date Range Picker -->
+    <!-- script for reports-->
+    <script src="js/search.js"></script>
+    <script src="js/cart_popup.js"></script>
+    <script src="js/warranty_report_table.js"></script>
+    <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/dataTables.bootstrap4.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="js/warranty_report.js"></script>
     <script>
-      new DataTable('#provinceTable', {
-        lengthMenu: [
-          [5, 10, 25, 50, -1],
-          [5, 10, 25, 50, 'All']
-        ]
-      });
+
+
+      // Función para generar el informe y mostrarlo en el DataTable
+      function generateReport() {
+        
+        // get date selected by user
+        var date = $('#StartDate').val();
+        var date = $('#EndDate').val();
+        var date = $('#company').val();
+
+        // shows table
+        $('#reportTableContainer').show();
+      }
+
+
     </script>
-
-
-
-    <!-- Popup for New Province-->
-    <div class="overlay" id="overlay"></div>
-    <div class="popup" id="popup">
-      <h2>Add a Province</h2>
-      <label for="province">Name:</label>
-      <input type="text" id="province" required>
-      <button class="save" id="closePopup">Save</button>
-      <button class="cancel" id="closePopup2">Cancel</button>
-    </div>
-    <!-- End Popup -->
-
-
-    <!-- Popup for Edit Province-->
-    <div class="overlay2" id="overlay2"></div>
-    <div class="popup2" id="popup2">
-      <h2>Edit a Province</h2>
-      <label for="province">Name:</label>
-      <input type="text" id="city" value="Ontario" required>
-      <button class="save" id="closePopupEdit">Save</button>
-      <button class="cancel" id="closePopupEdit2">Cancel</button>
-    </div>
-    <!-- End Popup -->
-    <script src="js/popup.js"></script>
 
   </main>
   <footer class="footer">
@@ -274,10 +337,6 @@
           href="mailto:info@emmasengines.com">info@emmasengines.com</a></p>
     </div>
   </footer>
-  <script src="js/form_equipment.js"></script>
-  <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
 </body>
 
 </html>
