@@ -19,6 +19,7 @@
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,300,0,0" />
     <!-- css-->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style_media.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
     <!--DataTable-->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -31,7 +32,7 @@
         <!-- Nav Menu-->
         <div class="container-fluid ">
             <nav class="navbar navbar-expand-lg navbar-light navbar-top-flex">
-                <a class="navbar-brand" href="index.html">
+                <a class="navbar-brand" href="dashboard.html">
                     <div class="icon-flex">
                         <img src="images/logo1.png" alt="company logo">
                         <span id="logo">Emma's Small Engine</span>
@@ -57,7 +58,7 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="adminDropdown">
                                 <a class="dropdown-item" href="#">Profile</a>
-                                <a class="dropdown-item" href="login.html">Logout</a>
+                                <a class="dropdown-item" href="index.html">Logout</a>
                             </div>
                         </li>
                     </ul>
@@ -69,284 +70,335 @@
     <main>
         <nav class="navbar navbar-expand-lg navbar-dark" aria-label="Fifth navbar example">
             <div class="container-fluid">
-              <div class="collapse navbar-collapse" id="navbarsExample05">
-                <div>
-                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <div id="dashboard-menu">
-                      <li class="nav-item">
-                        <a id="dashboard-link" class="nav-link" aria-current="page" href="index.html">
-                          <i class="icon-bottom bi bi-speedometer"></i>Dashboard</a>
-                      </li>
-                    </div>
-                    <div id="customer-menu" class="boder-left">
-                      <li class="nav-item">
-                        <a id="customer-link" class="nav-link" aria-current="page" href="customer.html">
-                          <i class="icon-bottom bi bi-file-person-fill"></i>Customer</a>
-                      </li>
-                    </div>
-                    <div id="repairs-menu" class="boder-left">
-                      <li class="nav-item">
-                        <a id="repairs-link" class="nav-link" aria-current="page" href="list_repairs.html">
-                          <i class="icon-bottom bi bi-tools"></i>Repairs</a>
-                      </li>
-                    </div>
-                    <div id="maintain-menu" class="boder-left">
-                      <li class="nav-item dropdown">
-                        <a id="maintain-link" class="nav-link dropdown-toggle" href="#" id="dropdown05" data-bs-toggle="dropdown" aria-expanded="false">
-                          <i class="icon-bottom bi bi-person-fill-gear"></i>Maintain</a>
-                        <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown05">
-                          <!-- Add id to submenu items -->
-                          <li id="customer-submenu">
-                            <a class="dropdown-item" href="#"> Customer &raquo; </a>
-                            <ul class="submenu dropdown-menu">
-                              <li><a class="dropdown-item" href="city.html">City</a></li>
-                              <li><a class="dropdown-item" href="province.html">Province</a></li>
-                            </ul>
-                          </li>
-                          <li id="equipment-submenu">
-                            <a class="dropdown-item" href="#"> Equipment &raquo; </a>
-                            <ul class="submenu dropdown-menu">
-                              <li><a class="dropdown-item" href="color.html">Color</a></li>
-                              <li><a class="dropdown-item" href="manufacture.html">Manufacturer</a></li>
-                              <li><a class="dropdown-item" href="type.html">Type</a></li>
-                            </ul>
-                          </li>
-                          <li id="repair-submenu">
-                            <a class="dropdown-item" href="#"> Repair &raquo; </a>
-                            <ul class="submenu dropdown-menu">
-                              <li><a class="dropdown-item" href="parts.html">Parts</a></li>
-                              <li><a class="dropdown-item" href="technician.html">Technicians</a></li>
-                            </ul>
-                          </li>
+                <div class="collapse navbar-collapse" id="navbarsExample05">
+                    <div>
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <div id="dashboard-menu">
+                                <li class="nav-item">
+                                    <a id="dashboard-link" class="nav-link" aria-current="page" href="dashboard.html">
+                                        <i class="icon-bottom bi bi-speedometer"></i>Dashboard</a>
+                                </li>
+                            </div>
+                            <div id="customer-menu" class="boder-left">
+                                <li class="nav-item">
+                                    <a id="customer-link" class="nav-link" aria-current="page" href="customer.html">
+                                        <i class="icon-bottom bi bi-file-person-fill"></i>Customer</a>
+                                </li>
+                            </div>
+                            <div id="repairs-menu" class="boder-left">
+                                <li class="nav-item">
+                                    <a id="repairs-link" class="nav-link" aria-current="page" href="list_repairs.html">
+                                        <i class="icon-bottom bi bi-tools"></i>Repairs</a>
+                                </li>
+                            </div>
+                            <div id="maintain-menu" class="boder-left">
+                                <li class="nav-item dropdown">
+                                    <a id="maintain-link" class="nav-link dropdown-toggle" href="#" id="dropdown05"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="icon-bottom bi bi-person-fill-gear"></i>Maintain</a>
+                                    <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown05">
+                                        <!-- Add id to submenu items -->
+                                        <li id="customer-submenu">
+                                            <a class="dropdown-item" href="#"> Customer &raquo; </a>
+                                            <ul class="submenu dropdown-menu">
+                                                <li><a class="dropdown-item" href="city.html">City</a></li>
+                                                <li><a class="dropdown-item" href="province.html">Province</a></li>
+                                            </ul>
+                                        </li>
+                                        <li id="equipment-submenu">
+                                            <a class="dropdown-item" href="#"> Equipment &raquo; </a>
+                                            <ul class="submenu dropdown-menu">
+                                                <li><a class="dropdown-item" href="color.html">Color</a></li>
+                                                <li><a class="dropdown-item" href="manufacture.html">Manufacturer</a>
+                                                </li>
+                                                <li><a class="dropdown-item" href="type.html">Type</a></li>
+                                            </ul>
+                                        </li>
+                                        <li id="repair-submenu">
+                                            <a class="dropdown-item" href="#"> Repair &raquo; </a>
+                                            <ul class="submenu dropdown-menu">
+                                                <li><a class="dropdown-item" href="parts.html">Parts</a></li>
+                                                <li><a class="dropdown-item" href="technician.html">Technicians</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </div>
+                            <div id="warranty-menu" class="boder-left">
+                                <li class="nav-item">
+                                    <a id="customer-link" class="nav-link" aria-current="page"
+                                        href="warranty_report.html">
+                                        <i class="icon-bottom bi bi-clipboard2-data-fill"></i>Reports</a>
+                                </li>
+                            </div>
                         </ul>
-                      </li>
                     </div>
-                    <div id="reports-menu" class="boder-left">
-                      <li class="nav-item dropdown">
-                        <a id="reports-link" class="nav-link dropdown-toggle" href="#" id="dropdown05" data-bs-toggle="dropdown" aria-expanded="false">
-                          <i class="icon-bottom bi bi-clipboard2-data-fill"></i>Reports</a>
-                        <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown05">
-                          <li><a id="warranty-report-link" class="dropdown-item" href="warranty_report.html"> Warranty&raquo; </a></li>
-                          <li><a id="repair-report-link" class="dropdown-item" href="repair_report.html"> Repairs &raquo; </a></li>
-                          <li><a id="activity-report-link" class="dropdown-item" href="activity_report.html"> User Activity &raquo; </a></li>
-                        </ul>
-                      </li>
+                    <!--Search by Customer -->
+                    <div class="search-bar">
+                        <input type="search" placeholder="Search by Customer" id="searchInput">
+                        <button type="button" class="search-button" onclick="performSearch()">
+                            <i class="bi bi-search"></i>
+                        </button>
                     </div>
-                  </ul>
                 </div>
-                <!--Search by Customer -->
-                <div class="search-bar">
-                  <input type="search" placeholder="Search by Customer" id="searchInput">
-                  <button type="button" class="search-button" onclick="performSearch()">
-                    <i class="bi bi-search"></i>
-                  </button>
-                </div>
-              </div>
             </div>
-          </nav>
-          
+        </nav>
 
+
+        <!-- KIM -->
         <div class="navbar-dark">
-            <div class="list-top">
+            <div class=" list-top">
                 <div class=" list-top-flex">
                     <p class="main-title">New Equipment</p>
                 </div>
             </div>
         </div>
 
+
+
         <div class="card2 navbar-dark">
-            <div class="card-header">
-                Customer Information
-            </div>
-            <div class="card-body1 customerCard">
-                <p class="card-text"> <label class="ft-18">Name: </label> Jhon Doe</p>
-                <p class="card-text"><label class="ft-18">Email: </label>  name@domain.com</p>   
-                <p class="card-text"><label class="ft-18">Phone:</label> (365)-123-45-678</p> 
-                <p class="card-text"></p> 
-                <p class="card-text"><label class="ft-18">Adress:</label> Street Address</p> 
-                <p class="card-text"><label class="ft-18">Province:</label> Ontario</p> 
-                <p class="card-text"><label class="ft-18">City:</label> Welland</p>  
-                <p class="card-text"><label class="ft-18">Zip:</label> L3C 6G9</p>    
+            <div>
+                <button type="button" class="collapse show cust-collapse" onclick="togglelookupDetails('customer1')">
+                    Customer Information <i id="icon-customer1" class="bi bi-caret-down" style="font-size: 15px;"></i>
+                </button>
             </div>
 
-        </div>
-
-        <form id="equipmentForm" class="form">
-            <!-- Name -->
-            <div class="form_group">
-                <label for="name" class="form_label">Name</label>
-                <div class="group-input">
-                    <input type="text" class="form_input" placeholder="ex. Soft Grass Bag" id="name" name="name"
-                        required>
-                </div>
-            </div>
-
-            <!-- Description -->
-            <div class="form_group">
-                <label for="description" class="form_label">Description</label>
-                <div class="group-input">
-                    <input type="text" class="form_input"
-                        placeholder="ex. Durable and practical bag for collecting grass" id="description"
-                        name="description" required>
-                </div>
-            </div>
-
-            <!-- Model -->
-            <div class="form_group">
-                <label for="model" class="form_label">Model</label>
-                <div class="group-input">
-                    <input type="text" class="form_input" placeholder="ex. X350" id="model" name="model" required>
-                </div>
-            </div>
-
-            <!-- Serial Number -->
-            <div class="form_group">
-                <label for="serialNumber" class="form_label">Serial Number:</label>
-                <div class="group-input">
-                    <input type="text" class="form_input" placeholder="ex. 234QWERHJ778" id="serialNumber"
-                        name="serialNumber" required>
-                </div>
-            </div>
-
-            <!-- Color -->
-            <div class="form_group">
-                <label for="color" class="form_label">Color</label>
-                <a href="#" class="showPopup btn-add" id="link-button">
-                    <div class="icon-flex">
-                        <span class="material-symbols-outlined">
-                            add_circle
-                        </span>
-                        <span>Add</span>
+            <div id="customer1" class="collapsible-content navbar-dark" style="display: block;">
+                <div class="card card-body customerCard" style="border: none; padding-bottom: 20px; height: 150px;">
+                    <div>
+                        <p class="card-text"> <label class="ft-18">Name</p></label> Jhon Doe
                     </div>
-                </a>
-                <div class="group-input">
-                    <select id="color" class="form_input" name="color" required>
-                        <option value="">Select a Color</option>
-                        <option value="">Blue</option>
-                        <option value="">Beige</option>
-                        <option value="">Cyan</option>
-                        <option value="">Gray</option>
-                        <option value="">Gold</option>
-                        <option value="">Lavender</option>
-                        <option value="">Maroon</option>
-                        <option value="">Orange</option>
-                        <option value="">Silver</option>
-                        <option value="">White</option>
-                        <option value="">Yellow</option>
-                    </select>
-                </div>
-            </div>
-
-            <!-- Manufacture -->
-            <div class="form_group">
-                <label for="manufacturer" class="form_label">Manufacturer</label>
-                <a href="#" class="showPopup btn-add" id="link-button">
-                    <div class="icon-flex">
-                        <span class="material-symbols-outlined">
-                            add_circle
-                        </span>
-                        <span>Add</span>
+                    <div>
+                        <p class="card-text"><label class="ft-18">Email</p> </label> name@domain.com
                     </div>
-                </a>
-                <div class="group-input">
-                    <select id="manufacturer" class="form_input" name="manufacturer" required>
-                        <option value="">Select a Manufacturer</option>
-                        <option value="">AGCO</option>
-                        <option value="">Ariens</option>
-                        <option value="">Craftsman</option>
-                        <option value="">Cub Cadet</option>
-                        <option value="">Honda</option>
-                        <option value="">Husqvarna</option>
-                        <option value="">John Deere</option>
-                        <option value="">MTD Products</option>
-                        <option value="">Toro</option>
-                        <option value="">Troy-Bilt</option>
-                        <option value="">Yard Machines</option>
-                    </select>
-                </div>
-            </div>
+                    <div>
+                        <p class="card-text"><label class="ft-18">Phone</p> </label> (365)-123-4578
 
-            <!-- Type -->
-            <div class="form_group">
-                <label for="type" class="form_label">Type</label>
-                <a href="#" class="showPopup btn-add" id="link-button">
-                    <div class="icon-flex">
-                        <span class="material-symbols-outlined">
-                            add_circle
-                        </span>
-                        <span>Add</span>
                     </div>
-                </a>
-                <div class="group-input">
-                    <select id="type" class="form_input" name="type" required>
-                        <option value="">Select a Equipment Type</option>
-                        <option value="">Push Reel Mower</option>
-                        <option value="">HGas-Powered Walk-Behind Mower</option>
-                        <option value="">Electric Walk-Behind Mower</option>
-                        <option value="">Riding Lawn Mower</option>
-                        <option value="">Robotic Lawn Mower</option>
-                        <option value="">Hover Mower</option>
-                        <option value="">Mulching Mower</option>
-                        <option value="">Self-Propelled Mower</option>
-                        <option value="">Cylinder Mower</option>
-                        <option value="">High-Wheel Mower</option>
-                        <option value="">Lawn Tractor</option>
-                    </select>
+                    <p class="card-text"></p>
+                    <div>
+                        <p class="card-text"><label class="ft-18">Adress</p> </label> Street Address
+
+                    </div>
+                    <div>
+                        <p class="card-text"><label class="ft-18">Province</p> </label> Ontario
+
+                    </div>
+                    <div>
+                        <p class="card-text"><label class="ft-18">City</p> </label> Welland
+
+                    </div>
+                    <div>
+                        <p class="card-text"><label class="ft-18">Zip</p></label> L3C 6G9
+                    </div>
                 </div>
             </div>
-                  <!-- warranty-->
-            <div class="form_group">
-                    <label for="type" class="form_label">Warranty</label>
-                    <a href="#"  id="link-button">
+            <!-- KIM -->
 
+
+            <form id="equipmentForm" class="form">
+                <!-- Name -->
+                <div class="form_group">
+                    <label for="name" class="form_label">Name</label>
+                    <div class="group-input">
+                        <input type="text" class="form_input" placeholder="ex. Soft Grass Bag" id="name" name="name"
+                            required>
+                    </div>
+                </div>
+
+                <!-- Description -->
+                <div class="form_group">
+                    <label for="description" class="form_label">Description</label>
+                    <div class="group-input">
+                        <input type="text" class="form_input"
+                            placeholder="ex. Durable and practical bag for collecting grass" id="description"
+                            name="description" required>
+                    </div>
+                </div>
+
+                <!-- Model -->
+                <div class="form_group">
+                    <label for="model" class="form_label">Model</label>
+                    <div class="group-input">
+                        <input type="text" class="form_input" placeholder="ex. X350" id="model" name="model" required>
+                    </div>
+                </div>
+
+                <!-- Serial Number -->
+                <div class="form_group">
+                    <label for="serialNumber" class="form_label">Serial Number:</label>
+                    <div class="group-input">
+                        <input type="text" class="form_input" placeholder="ex. 234QWERHJ778" id="serialNumber"
+                            name="serialNumber" required>
+                    </div>
+                </div>
+
+                <!-- Color -->
+                <div class="form_group">
+                    <label for="color" class="form_label">Color</label>
+                    <a href="#" class="showPopup btn-add" id="link-button">
+                        <div class="icon-flex">
+                            <span class="material-symbols-outlined">
+                                add_circle
+                            </span>
+                            <span>Add</span>
+                        </div>
                     </a>
-                  
-                  <div>
-                    <input type="button" value="Add" class="showPopup3"> 
-                </div> 
-            </div>
-            <!-- Buttons -->
-            <div class="group_btn button-container goback">
-                <input type="submit" onclick="location.href='equipment.html'" class="cancel" value="Back">
-                <input type="submit" class="save" value="Save">
-                <input type="reset" onclick="location.href='equipment.html'" class="cancel" value="Cancel">
-            </div>
-        </form>
-        <!-- <a href="customer.html" id="bottom_form" id="link-button">Go Back to Equipment List</a> -->
+                    <div class="group-input">
+                        <select id="color" class="form_input" name="color" required>
+                            <option value="">Select a Color</option>
+                            <option value="Blue">Blue</option>
+                            <option value="Beige">Beige</option>
+                            <option value="Cyan">Cyan</option>
+                            <option value="Gray">Gray</option>
+                            <option value="Gold">Gold</option>
+                            <option value="Lavender">Lavender</option>
+                            <option value="Maroon">Maroon</option>
+                            <option value="Orange">Orange</option>
+                            <option value="Silver">Silver</option>
+                            <option value="White">White</option>
+                            <option value="Yellow">Yellow</option>
+                        </select>
+                    </div>
+                </div>
 
-        <!-- Popup -->
-        <div class="overlay" id="overlay"></div>
-        <div class="popup" id="popup">
-            <label for="provinceInput">Name:</label>
-            <input type="text" id="provinceInput">
-            <button class="save" id="closePopup">Save</button>
-            <button class="cancel" id="closePopup2">Cancel</button>
-        </div>
-        <!-- End Popup -->
+                <!-- Manufacture -->
+                <div class="form_group">
+                    <label for="manufacturer" class="form_label">Manufacturer</label>
+                    <a href="#" class="showPopup btn-add" id="link-button">
+                        <div class="icon-flex">
+                            <span class="material-symbols-outlined">
+                                add_circle
+                            </span>
+                            <span>Add</span>
+                        </div>
+                    </a>
+                    <div class="group-input">
+                        <select id="manufacturer" class="form_input" name="manufacturer" required>
+                            <option value="">Select a Manufacturer</option>
+                            <option value="AGCO">AGCO</option>
+                            <option value="Ariens">Ariens</option>
+                            <option value="Craftsman">Craftsman</option>
+                            <option value="Cub Cadet">Cub Cadet</option>
+                            <option value="Honda">Honda</option>
+                            <option value="Husqvarna">Husqvarna</option>
+                            <option value="John Deere">John Deere</option>
+                            <option value="MTD Products">MTD Products</option>
+                            <option value="Toro">Toro</option>
+                            <option value="Troy-Bilt">Troy-Bilt</option>
+                            <option value="Yard Machines">Yard Machines</option>
+                        </select>
+                    </div>
+                </div>
 
-        <!-- Popup for warranty -->
-        <div class="overlay" id="overlay3"></div>
-        <div class="popup" id="popup3">
-            <h5>Does this product have a warranty?</h5>
-            <label for="provinceInput">Number:</label>
-            <input type="text" id="number">
-            <button class="save" id="closePopup3">Save</button>
-            <button class="cancel" id="closePopup4">Cancel</button>
-        </div>
-        <!-- End Popup -->
+                <!-- Type -->
+                <div class="form_group">
+                    <label for="type" class="form_label">Type</label>
+                    <a href="#" class="showPopup btn-add" id="link-button">
+                        <div class="icon-flex">
+                            <span class="material-symbols-outlined">
+                                add_circle
+                            </span>
+                            <span>Add</span>
+                        </div>
+                    </a>
+                    <div class="group-input">
+                        <select id="type" class="form_input" name="type" required>
+                            <option value="">Select an Equipment Type</option>
+                            <option value="Push Reel Mower">Push Reel Mower</option>
+                            <option value="Gas-Powered Walk-Behind Mower">Gas-Powered Walk-Behind Mower</option>
+                            <option value="Electric Walk-Behind Mower">Electric Walk-Behind Mower</option>
+                            <option value="Riding Lawn Mower">Riding Lawn Mower</option>
+                            <option value="Robotic Lawn Mower">Robotic Lawn Mower</option>
+                            <option value="Hover Mower">Hover Mower</option>
+                            <option value="Mulching Mower">Mulching Mower</option>
+                            <option value="Self-Propelled Mower">Self-Propelled Mower</option>
+                            <option value="Cylinder Mower">Cylinder Mower</option>
+                            <option value="High-Wheel Mower">High-Wheel Mower</option>
+                            <option value="Lawn Tractor">Lawn Tractor</option>
+                        </select>
+                    </div>
+                </div>
+                <!-- warranty-->
+                <div class="form_group">
+                    <label for="type" class="form_label">Warranty</label>
+                    <a href="#" class="showPopup btn-add" id="link-button">
+                        <div class="icon-flex">
+                            <span class="material-symbols-outlined">
+                                add_circle
+                            </span>
+                            <span>Add</span>
+                        </div>
+                    </a>
+                    <div class="group-input">
+                        <select id="type" class="form_input" name="type" required>
+                            <option value="">Select a Warranty</option>
+                            <option value="#2342344-MowSure ">#2342344-MowSure </option>
+                            <option value="#2234344-GreenGuard Warranties">#2234344-GreenGuard Warranties </option>
+                            <option value="#2343452-TurfTrust Coverage">#2343452-TurfTrust Coverage </option>
+                            <option value="#2345344-GrassGuardian Warranties">#2345344-GrassGuardian Warranties
+                            </option>
+                            <option value="#2334323-ProLawn Safeguard ">#2334323-ProLawn Safeguard </option>
+                        </select>
+                    </div>
+                </div>
+                <!-- <div class="form_group">
+                    <label for="type" class="form_label">Warranty</label>
+                    <a href="#" id="link-button">
+                    </a>
+                    <div>
+                        <input type="button" value="Add" class="showPopup3">
+                    </div>
+                </div> -->
+                <!-- Buttons -->
+                <div class="group_btn button-container goback">
+                    <input type="submit" onclick="location.href='customer.html'" class="cancel" value="Back">
+                    <input type="submit" class="save" value="Save">
+                    <input type="reset" onclick="location.href='equipment.html'" class="cancel" value="Cancel">
+                    <button id="fillFormButton" class="save">Fill Form</button>
+                </div>
+            </form>
+
+            <!-- Message -->
+            <div id="message" style="display: none;" class="group_btn">
+                <p>Equipment successfully Edited!.</p>
+            </div>
+            <!-- <a href="customer.html" id="bottom_form" id="link-button">Go Back to Equipment List</a> -->
+
+            <!-- Popup -->
+            <div class="overlay" id="overlay"></div>
+            <div class="popup" id="popup">
+                <label for="provinceInput">Name:</label>
+                <input type="text" id="provinceInput">
+                <button class="save" id="closePopup">Save</button>
+                <button class="cancel" id="closePopup2">Cancel</button>
+            </div>
+            <!-- End Popup -->
+
+            <!-- Popup for warranty -->
+            <div class="overlay" id="overlay3"></div>
+            <div class="popup" id="popup3">
+                <h5>Does this product have a warranty?</h5>
+                <label for="provinceInput">Number:</label>
+                <input type="text" id="number">
+                <button class="save" id="closePopup3">Save</button>
+                <button class="cancel" id="closePopup4">Cancel</button>
+            </div>
+            <!-- End Popup -->
     </main>
     <script>
         var userRole = localStorage.getItem("role");
-  
-        
-        if (userRole  === "sales") {
-          $("#dashboard-menu").hide();
-          $("#maintain-menu").hide();
-          $("#reports-menu").hide();
-          $("#repairs-menu").hide();
-          }else if (userRole  === "admin") {
-  
-          }        
+
+
+        if (userRole === "sales") {
+            $("#dashboard-menu").hide();
+            $("#maintain-menu").hide();
+            $("#reports-menu").hide();
+            $("#repairs-menu").hide();
+            $("#warranty-menu").hide();
+        } else if (userRole === "admin") {
+
+        }        
     </script>
     <footer class="footer">
         <div>
@@ -356,7 +408,11 @@
                     href="mailto:info@emmasengines.com">info@emmasengines.com</a></p>
         </div>
     </footer>
+
+    <script src="js/cart_help_popup.js"></script>
     <script src="js/form_equipment.js"></script>
+    <script src="js/dummy_buttons.js"></script>
+    <script src="js/cart_popup.js"></script>
     <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>

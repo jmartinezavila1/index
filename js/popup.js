@@ -42,7 +42,6 @@ document.getElementById("closePopupEdit2").addEventListener("click", function() 
 
 
 
-
 $(document).ready( function () {
     // Initialize DataTables on the table with id "customerTable"
     const dataTable = $('#customerTable').DataTable();

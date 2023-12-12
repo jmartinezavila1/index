@@ -1,9 +1,9 @@
 
-function exportReport() {
+function repairExportReport() {
     // Obtiene los valores seleccionados por el usuario
-var startDate = $('#StartDate').val();
-var endDate = $('#EndDate').val();
-var status = $('#company').val();
+var startDate = $('#StartDate1').val();
+var endDate = $('#EndDate1').val();
+var status = $('#status').val();
 
 
 
@@ -22,11 +22,12 @@ var doc = new jsPDF();
   doc.text("Report date range: " + startDate + " - " + endDate, 10, 50);
   // Agregar el departamento de la persona que lo generó
   doc.text("Role: Admin", 10, 60);
+  doc.text("Status: " + status, 10, 70);
   
 
   doc.autoTable({
-    html: '#reportTablepdf',
-    startY: 70,
+    html: '#repairReportTablepdf',
+    startY: 80,
     theme: 'grid',
     headStyles :{lineWidth: .5,fillColor: [26, 137, 241],textColor: [255,255,255],
     },
@@ -50,9 +51,9 @@ var doc = new jsPDF();
 
 })
 
-doc.text("Total Cost of Parts: $250.00", 150, 123);
-doc.text("Total Labor Cost: $500.00", 150, 130);
-doc.text("Total Cost: $750.00", 150, 137);
+doc.text("Total Cost of Parts: $250.00", 150, 130);
+doc.text("Total Labor Cost: $500.00", 150, 137);
+doc.text("Total Cost: $750.00", 150, 144);
 
 doc.save("Repair_Report.pdf");
 }
@@ -63,3 +64,20 @@ var mm = String(today.getMonth() + 1).padStart(2, '0'); // Enero es 0
 var yyyy = today.getFullYear();
 return dd + '/' + mm + '/' + yyyy;
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Get the elements
+    var repairReportLink = document.getElementById("profile-tab");
+    var warrantyReportContainer = document.getElementById("warrantyReportContainer");
+    var ActivityReportContainer = document.getElementById("ActvityReportContainer");
+  
+    // Add a click event listener to the "Repair Report" link
+    repairReportLink.addEventListener("click", function(event) {
+      // Prevent the default behavior (navigation)
+      event.preventDefault();
+  
+      // Hide the warranty report container
+      warrantyReportContainer.style.display = "none";
+      ActivityReportContainer.style.display = "none";
+    });
+});

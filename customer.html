@@ -9,6 +9,8 @@
   <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/navbars/">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
   <!-- Fonts-->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,6 +20,7 @@
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,300,0,0" />
   <!-- css-->
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style_media.css">
   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
   <!--DataTable-->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -30,7 +33,7 @@
   <!-- jQuery -->
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <!-- Bootstrap JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
   <!-- Typeahead.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.1/bootstrap3-typeahead.min.js"></script>
 </head>
@@ -40,7 +43,7 @@
     <!-- Nav Menu-->
     <div class="container-fluid ">
       <nav class="navbar navbar-expand-lg navbar-light navbar-top-flex">
-        <a class="navbar-brand" href="index.html">
+        <a class="navbar-brand" href="dashboard.html">
           <div class="icon-flex">
             <img src="images/logo1.png" alt="company logo">
             <span id="logo">Emma's Small Engine</span>
@@ -68,7 +71,7 @@
               </a>
               <div class="dropdown-menu" aria-labelledby="adminDropdown">
                 <a class="dropdown-item" href="#">Profile</a>
-                <a class="dropdown-item" href="login.html">Logout</a>
+                <a class="dropdown-item" href="index.html">Logout</a>
               </div>
             </li>
           </ul>
@@ -86,7 +89,7 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <div id="dashboard-menu">
                 <li class="nav-item">
-                  <a id="dashboard-link" class="nav-link" aria-current="page" href="index.html">
+                  <a id="dashboard-link" class="nav-link" aria-current="page" href="dashboard.html">
                     <i class="icon-bottom bi bi-speedometer"></i>Dashboard</a>
                 </li>
               </div>
@@ -104,7 +107,8 @@
               </div>
               <div id="maintain-menu" class="boder-left">
                 <li class="nav-item dropdown">
-                  <a id="maintain-link" class="nav-link dropdown-toggle" href="#" id="dropdown05" data-bs-toggle="dropdown" aria-expanded="false">
+                  <a id="maintain-link" class="nav-link dropdown-toggle" href="#" id="dropdown05"
+                    data-bs-toggle="dropdown" aria-expanded="false">
                     <i class="icon-bottom bi bi-person-fill-gear"></i>Maintain</a>
                   <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown05">
                     <!-- Add id to submenu items -->
@@ -133,15 +137,10 @@
                   </ul>
                 </li>
               </div>
-              <div id="reports-menu" class="boder-left">
-                <li class="nav-item dropdown">
-                  <a id="reports-link" class="nav-link dropdown-toggle" href="#" id="dropdown05" data-bs-toggle="dropdown" aria-expanded="false">
+              <div id="warranty-menu" class="boder-left">
+                <li class="nav-item">
+                  <a id="customer-link" class="nav-link" aria-current="page" href="warranty_report.html">
                     <i class="icon-bottom bi bi-clipboard2-data-fill"></i>Reports</a>
-                  <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown05">
-                    <li><a id="warranty-report-link" class="dropdown-item" href="warranty_report.html"> Warranty&raquo; </a></li>
-                    <li><a id="repair-report-link" class="dropdown-item" href="repair_report.html"> Repairs &raquo; </a></li>
-                    <li><a id="activity-report-link" class="dropdown-item" href="activity_report.html"> User Activity &raquo; </a></li>
-                  </ul>
                 </li>
               </div>
             </ul>
@@ -156,7 +155,10 @@
         </div>
       </div>
     </nav>
-    
+
+    <a href="#" class="btn btn-primary fixed-button showPopup show-cart-btn1 ">
+      <i class="bi bi-question" style="font-size: 1.5em;"></i>
+    </a>
 
     <!-- Customer table body -->
     <div class="navbar-dark">
@@ -186,14 +188,16 @@
           <td>john@example.com</td>
           <td>123-456-7890</td>
           <td>
-            <button class="editCustomer" onclick="location.href='edit_customer.html'" data-bs-toggle="tooltip"
-              data-bs-placement="top" data-bs-custom-class="custom-tooltip"
-              data-bs-title="Add jobs to the selected repair.">Edit</button>
-            <button class="showPopup show-cart-btn" data-bs-toggle="tooltip" data-bs-placement="top"
-              data-bs-custom-class="custom-tooltip" data-bs-title="Add jobs to the selected repair.">Details</button>
-            <button class="edit_customerEquipment" onclick="location.href='new_equipment.html'" data-bs-toggle="tooltip"
-              data-bs-placement="top" data-bs-custom-class="custom-tooltip"
-              data-bs-title="Add jobs to the selected repair.">+Equipment</button>
+            <div class="table-btn-flex">
+              <button class="editCustomer" onclick="location.href='edit_customer.html'" data-bs-toggle="tooltip"
+                data-bs-placement="top" data-bs-custom-class="custom-tooltip"
+                data-bs-title="Add jobs to the selected repair.">Edit</button>
+              <button class="showPopup show-cart-btn" data-bs-toggle="tooltip" data-bs-placement="top"
+                data-bs-custom-class="custom-tooltip" data-bs-title="Add jobs to the selected repair.">Details</button>
+              <button class="edit_customerEquipment" onclick="location.href='new_equipment.html'"
+                data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
+                data-bs-title="Add jobs to the selected repair.">+Equipment</button>
+            </div>
           </td>
         </tr>
         <tr>
@@ -201,14 +205,16 @@
           <td>jane@example.com</td>
           <td>987-654-3210</td>
           <td>
-            <button class="editCustomer" onclick="location.href='edit_customer.html'" data-bs-toggle="tooltip"
-              data-bs-placement="top" data-bs-custom-class="custom-tooltip"
-              data-bs-title="Edit the Customer information.">Edit</button>
-            <button class="showPopup show-cart-btn" data-bs-toggle="tooltip" data-bs-placement="top"
-              data-bs-custom-class="custom-tooltip" data-bs-title="Show the details of the Customer.">Details</button>
-            <button class="edit_customerEquipment" onclick="location.href='new_equipment.html'" data-bs-toggle="tooltip"
-              data-bs-placement="top" data-bs-custom-class="custom-tooltip"
-              data-bs-title="Add an aquipment to this Customer.">+Equipment</button>
+            <div class="table-btn-flex">
+              <button class="editCustomer" onclick="location.href='edit_customer.html'" data-bs-toggle="tooltip"
+                data-bs-placement="top" data-bs-custom-class="custom-tooltip"
+                data-bs-title="Add jobs to the selected repair.">Edit</button>
+              <button class="showPopup show-cart-btn" data-bs-toggle="tooltip" data-bs-placement="top"
+                data-bs-custom-class="custom-tooltip" data-bs-title="Add jobs to the selected repair.">Details</button>
+              <button class="edit_customerEquipment" onclick="location.href='new_equipment.html'"
+                data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
+                data-bs-title="Add jobs to the selected repair.">+Equipment</button>
+            </div>
           </td>
         </tr>
         <!-- Add more customer data here -->
@@ -217,14 +223,16 @@
           <td>johnathen@example.com</td>
           <td>321-456-7890</td>
           <td>
-            <button class="editCustomer" onclick="location.href='edit_customer.html'" data-bs-toggle="tooltip"
-              data-bs-placement="top" data-bs-custom-class="custom-tooltip"
-              data-bs-title="Edit the Customer information.">Edit</button>
-            <button class="showPopup show-cart-btn" data-bs-toggle="tooltip" data-bs-placement="top"
-              data-bs-custom-class="custom-tooltip" data-bs-title="Show the details of the Customer.">Details</button>
-            <button class="edit_customerEquipment" onclick="location.href='new_equipment.html'" data-bs-toggle="tooltip"
-              data-bs-placement="top" data-bs-custom-class="custom-tooltip"
-              data-bs-title="Add an aquipment to this Customer.">+Equipment</button>
+            <div class="table-btn-flex">
+              <button class="editCustomer" onclick="location.href='edit_customer.html'" data-bs-toggle="tooltip"
+                data-bs-placement="top" data-bs-custom-class="custom-tooltip"
+                data-bs-title="Add jobs to the selected repair.">Edit</button>
+              <button class="showPopup show-cart-btn" data-bs-toggle="tooltip" data-bs-placement="top"
+                data-bs-custom-class="custom-tooltip" data-bs-title="Add jobs to the selected repair.">Details</button>
+              <button class="edit_customerEquipment" onclick="location.href='new_equipment.html'"
+                data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
+                data-bs-title="Add jobs to the selected repair.">+Equipment</button>
+            </div>
           </td>
         </tr>
         <tr>
@@ -232,14 +240,16 @@
           <td>johnny@example.com</td>
           <td>123-654-7890</td>
           <td>
-            <button class="editCustomer" onclick="location.href='edit_customer.html'" data-bs-toggle="tooltip"
-              data-bs-placement="top" data-bs-custom-class="custom-tooltip"
-              data-bs-title="Edit the Customer information.">Edit</button>
-            <button class="showPopup show-cart-btn" data-bs-toggle="tooltip" data-bs-placement="top"
-              data-bs-custom-class="custom-tooltip" data-bs-title="Show the details of the Customer.">Details</button>
-            <button class="edit_customerEquipment" onclick="location.href='new_equipment.html'" data-bs-toggle="tooltip"
-              data-bs-placement="top" data-bs-custom-class="custom-tooltip"
-              data-bs-title="Add an aquipment to this Customer.">+Equipment</button>
+            <div class="table-btn-flex">
+              <button class="editCustomer" onclick="location.href='edit_customer.html'" data-bs-toggle="tooltip"
+                data-bs-placement="top" data-bs-custom-class="custom-tooltip"
+                data-bs-title="Add jobs to the selected repair.">Edit</button>
+              <button class="showPopup show-cart-btn" data-bs-toggle="tooltip" data-bs-placement="top"
+                data-bs-custom-class="custom-tooltip" data-bs-title="Add jobs to the selected repair.">Details</button>
+              <button class="edit_customerEquipment" onclick="location.href='new_equipment.html'"
+                data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
+                data-bs-title="Add jobs to the selected repair.">+Equipment</button>
+            </div>
           </td>
         </tr>
         <tr>
@@ -247,14 +257,16 @@
           <td>johnnathy@example.com</td>
           <td>123-456-9870</td>
           <td>
-            <button class="editCustomer" onclick="location.href='edit_customer.html'" data-bs-toggle="tooltip"
-              data-bs-placement="top" data-bs-custom-class="custom-tooltip"
-              data-bs-title="Edit the Customer information.">Edit</button>
-            <button class="showPopup show-cart-btn" data-bs-toggle="tooltip" data-bs-placement="top"
-              data-bs-custom-class="custom-tooltip" data-bs-title="Show the details of the Customer.">Details</button>
-            <button class="edit_customerEquipment" onclick="location.href='new_equipment.html'" data-bs-toggle="tooltip"
-              data-bs-placement="top" data-bs-custom-class="custom-tooltip"
-              data-bs-title="Add an aquipment to this Customer.">+Equipment</button>
+            <div class="table-btn-flex">
+              <button class="editCustomer" onclick="location.href='edit_customer.html'" data-bs-toggle="tooltip"
+                data-bs-placement="top" data-bs-custom-class="custom-tooltip"
+                data-bs-title="Add jobs to the selected repair.">Edit</button>
+              <button class="showPopup show-cart-btn" data-bs-toggle="tooltip" data-bs-placement="top"
+                data-bs-custom-class="custom-tooltip" data-bs-title="Add jobs to the selected repair.">Details</button>
+              <button class="edit_customerEquipment" onclick="location.href='new_equipment.html'"
+                data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
+                data-bs-title="Add jobs to the selected repair.">+Equipment</button>
+            </div>
           </td>
         </tr>
         <tr>
@@ -262,14 +274,16 @@
           <td>jerry@example.com</td>
           <td>123-456-7809</td>
           <td>
-            <button class="editCustomer" onclick="location.href='edit_customer.html'" data-bs-toggle="tooltip"
-              data-bs-placement="top" data-bs-custom-class="custom-tooltip"
-              data-bs-title="Edit the Customer information.">Edit</button>
-            <button class="showPopup show-cart-btn" data-bs-toggle="tooltip" data-bs-placement="top"
-              data-bs-custom-class="custom-tooltip" data-bs-title="Show the details of the Customer.">Details</button>
-            <button class="edit_customerEquipment" onclick="location.href='new_equipment.html'" data-bs-toggle="tooltip"
-              data-bs-placement="top" data-bs-custom-class="custom-tooltip"
-              data-bs-title="Add an aquipment to this Customer.">+Equipment</button>
+            <div class="table-btn-flex">
+              <button class="editCustomer" onclick="location.href='edit_customer.html'" data-bs-toggle="tooltip"
+                data-bs-placement="top" data-bs-custom-class="custom-tooltip"
+                data-bs-title="Add jobs to the selected repair.">Edit</button>
+              <button class="showPopup show-cart-btn" data-bs-toggle="tooltip" data-bs-placement="top"
+                data-bs-custom-class="custom-tooltip" data-bs-title="Add jobs to the selected repair.">Details</button>
+              <button class="edit_customerEquipment" onclick="location.href='new_equipment.html'"
+                data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
+                data-bs-title="Add jobs to the selected repair.">+Equipment</button>
+            </div>
           </td>
         </tr>
         <tr>
@@ -277,14 +291,16 @@
           <td>jimmy@example.com</td>
           <td>123-456-8090</td>
           <td>
-            <button class="editCustomer" onclick="location.href='edit_customer.html'" data-bs-toggle="tooltip"
-              data-bs-placement="top" data-bs-custom-class="custom-tooltip"
-              data-bs-title="Edit the Customer information.">Edit</button>
-            <button class="showPopup show-cart-btn" data-bs-toggle="tooltip" data-bs-placement="top"
-              data-bs-custom-class="custom-tooltip" data-bs-title="Show the details of the Customer.">Details</button>
-            <button class="edit_customerEquipment" onclick="location.href='new_equipment.html'" data-bs-toggle="tooltip"
-              data-bs-placement="top" data-bs-custom-class="custom-tooltip"
-              data-bs-title="Add an aquipment to this Customer.">+Equipment</button>
+            <div class="table-btn-flex">
+              <button class="editCustomer" onclick="location.href='edit_customer.html'" data-bs-toggle="tooltip"
+                data-bs-placement="top" data-bs-custom-class="custom-tooltip"
+                data-bs-title="Add jobs to the selected repair.">Edit</button>
+              <button class="showPopup show-cart-btn" data-bs-toggle="tooltip" data-bs-placement="top"
+                data-bs-custom-class="custom-tooltip" data-bs-title="Add jobs to the selected repair.">Details</button>
+              <button class="edit_customerEquipment" onclick="location.href='new_equipment.html'"
+                data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
+                data-bs-title="Add jobs to the selected repair.">+Equipment</button>
+            </div>
           </td>
         </tr>
         <tr>
@@ -292,14 +308,16 @@
           <td>jaret@example.com</td>
           <td>123-567-7890</td>
           <td>
-            <button class="editCustomer" onclick="location.href='edit_customer.html'" data-bs-toggle="tooltip"
-              data-bs-placement="top" data-bs-custom-class="custom-tooltip"
-              data-bs-title="Edit the Customer information.">Edit</button>
-            <button class="showPopup show-cart-btn" data-bs-toggle="tooltip" data-bs-placement="top"
-              data-bs-custom-class="custom-tooltip" data-bs-title="Show the details of the Customer.">Details</button>
-            <button class="edit_customerEquipment" onclick="location.href='new_equipment.html'" data-bs-toggle="tooltip"
-              data-bs-placement="top" data-bs-custom-class="custom-tooltip"
-              data-bs-title="Add an aquipment to this Customer.">+Equipment</button>
+            <div class="table-btn-flex">
+              <button class="editCustomer" onclick="location.href='edit_customer.html'" data-bs-toggle="tooltip"
+                data-bs-placement="top" data-bs-custom-class="custom-tooltip"
+                data-bs-title="Add jobs to the selected repair.">Edit</button>
+              <button class="showPopup show-cart-btn" data-bs-toggle="tooltip" data-bs-placement="top"
+                data-bs-custom-class="custom-tooltip" data-bs-title="Add jobs to the selected repair.">Details</button>
+              <button class="edit_customerEquipment" onclick="location.href='new_equipment.html'"
+                data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
+                data-bs-title="Add jobs to the selected repair.">+Equipment</button>
+            </div>
           </td>
         </tr>
         <tr>
@@ -307,14 +325,16 @@
           <td>jamien@example.com</td>
           <td>675-456-7890</td>
           <td>
-            <button class="editCustomer" onclick="location.href='edit_customer.html'" data-bs-toggle="tooltip"
-              data-bs-placement="top" data-bs-custom-class="custom-tooltip"
-              data-bs-title="Edit the Customer information.">Edit</button>
-            <button class="showPopup show-cart-btn" data-bs-toggle="tooltip" data-bs-placement="top"
-              data-bs-custom-class="custom-tooltip" data-bs-title="Show the details of the Customer.">Details</button>
-            <button class="edit_customerEquipment" onclick="location.href='new_equipment.html'" data-bs-toggle="tooltip"
-              data-bs-placement="top" data-bs-custom-class="custom-tooltip"
-              data-bs-title="Add an aquipment to this Customer.">+Equipment</button>
+            <div class="table-btn-flex">
+              <button class="editCustomer" onclick="location.href='edit_customer.html'" data-bs-toggle="tooltip"
+                data-bs-placement="top" data-bs-custom-class="custom-tooltip"
+                data-bs-title="Add jobs to the selected repair.">Edit</button>
+              <button class="showPopup show-cart-btn" data-bs-toggle="tooltip" data-bs-placement="top"
+                data-bs-custom-class="custom-tooltip" data-bs-title="Add jobs to the selected repair.">Details</button>
+              <button class="edit_customerEquipment" onclick="location.href='new_equipment.html'"
+                data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
+                data-bs-title="Add jobs to the selected repair.">+Equipment</button>
+            </div>
           </td>
         </tr>
         <tr>
@@ -322,14 +342,16 @@
           <td>Jeremy@example.com</td>
           <td>123-743-7890</td>
           <td>
-            <button class="editCustomer" onclick="location.href='edit_customer.html'" data-bs-toggle="tooltip"
-              data-bs-placement="top" data-bs-custom-class="custom-tooltip"
-              data-bs-title="Edit the Customer information.">Edit</button>
-            <button class="showPopup show-cart-btn" data-bs-toggle="tooltip" data-bs-placement="top"
-              data-bs-custom-class="custom-tooltip" data-bs-title="Show the details of the Customer.">Details</button>
-            <button class="edit_customerEquipment" onclick="location.href='new_equipment.html'" data-bs-toggle="tooltip"
-              data-bs-placement="top" data-bs-custom-class="custom-tooltip"
-              data-bs-title="Add an aquipment to this Customer.">+Equipment</button>
+            <div class="table-btn-flex">
+              <button class="editCustomer" onclick="location.href='edit_customer.html'" data-bs-toggle="tooltip"
+                data-bs-placement="top" data-bs-custom-class="custom-tooltip"
+                data-bs-title="Add jobs to the selected repair.">Edit</button>
+              <button class="showPopup show-cart-btn" data-bs-toggle="tooltip" data-bs-placement="top"
+                data-bs-custom-class="custom-tooltip" data-bs-title="Add jobs to the selected repair.">Details</button>
+              <button class="edit_customerEquipment" onclick="location.href='new_equipment.html'"
+                data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip"
+                data-bs-title="Add jobs to the selected repair.">+Equipment</button>
+            </div>
           </td>
         </tr>
       </tbody>
@@ -372,31 +394,78 @@
         <label>Phone: </label> 675-456-7890<br>
         <label>Address: </label> 64 Chappel Hill<br>
         <label>Province: </label> Ontario<br>
-        <label>---------------------------------------------------------</label> <br>
-        <div class="btn-detail-close">
+        <label>-----------------------------------------------------</label> <br>
+
+
+        <div class="card2 navbar-dark">
           <div>
-            <label>Equipment: </label>M3927F3 
+            <button type="button" class="collapse show cust-collapse" style="padding: 10px; width: 70%; text-align: center;" onclick="toggleRepairDetails('cusEtuip1')">
+              Equipment - M2467F3 <i id="icon-cusEtuip1" class="bi bi-caret-down" style="font-size: 15px;"></i>
+            </button>
           </div>
-          <button class="btn-detail"
-            onclick="location.href='edit_equipment.html'">Edit</button><br>
-            <button class="btn-repair"
-            onclick="location.href='new_repairs.html'">+Repair</button><br>
-        </div> 
-        <div class="btn-detail-close">
-          <div>
-            <label>Equipment: </label>M3927F3 
+
+          <div id="cusEtuip1" class="collapsible-content navbar-dark" style="display: block;">
+            <div>
+            </div>
+            <div class="btn-detail-close" style="margin-top: 10px;">
+              <label>Equipment</label><br>
+              <span style="padding: 0 10px;">M2467F3</span>
+              <button class="btn-detail" onclick="location.href='edit_equipment.html'">Edit</button>
+              <button class="btn-repair" onclick="location.href='new_repairs.html'">+Repair</button>
+            </div>
+
+            <label>Repair History</label><br>
+            <span style="padding: 0 10px;">M3927F3: 2022-04-21</span><br>
+            <span style="padding: 0 10px;">M3927F3: 2022-04-21</span><br>
           </div>
-          <button class="btn-detail"
-            onclick="location.href='edit_equipment.html'">Edit</button><br>
-            <button class="btn-repair"
-            onclick="location.href='edit_equipment.html'">+Repair</button><br>
-        </div> 
-       
-        <label>---------------------------------------------------------</label> <br>
-        <label>Last Repair: </label>2022-04-21<br>
-        <label>Last Repair: </label>2022-04-21<br>
-        
-        <br>
+          </div>
+
+          <div class="card2 navbar-dark">
+            <div>
+              <button type="button" class="collapse show cust-collapse" style="padding: 10px; width: 70%; text-align: center;" onclick="toggleRepairDetails('cusEtuip2')">
+                Equipment - M2467F3 <i id="icon-cusEtuip2" class="bi bi-caret-down" style="font-size: 15px;"></i>
+              </button>
+            </div>
+
+            <div id="cusEtuip2" class="collapsible-content navbar-dark" style="display: block;">
+              <div>
+              </div>
+              <div class="btn-detail-close" style="margin-top: 10px;">
+                <label>Equipment</label><br>
+                <span style="padding: 0 10px;">M3267F3</span>
+                <button class="btn-detail" onclick="location.href='edit_equipment.html'">Edit</button>
+                <button class="btn-repair" onclick="location.href='new_repairs.html'">+Repair</button>
+              </div>
+
+            <label>Repair History</label><br>
+            <span style="padding: 0 10px;">M3927F3: 2022-04-21</span><br>
+            <span style="padding: 0 10px;">M3927F3: 2022-04-21</span><br>
+          </div>
+        </div>
+
+
+
+        <!-- <div>
+            <label>Equipment </label>
+          </div>
+          <div class="btn-detail-close">
+            <span style="padding: 0 10px;">M2467F3</span>
+            <button class="btn-detail" onclick="location.href='edit_equipment.html'">Edit</button>
+            <button class="btn-repair" onclick="location.href='new_repairs.html'">+Repair</button>
+          </div>
+          <br>
+          <div class="btn-detail-close">
+            <span style="padding: 0 10px;">M3267F3</span>
+            <button class="btn-detail" onclick="location.href='edit_equipment.html'">Edit</button>
+            <button class="btn-repair" onclick="location.href='new_repairs.html'">+Repair</button>
+          </div>
+
+          <label>-----------------------------------------------------</label> <br>
+          <label>Repair History</label><br>
+          <span style="padding: 0 10px;">M3927F3: 2022-04-21</span><br>
+          <span style="padding: 0 10px;">M3927F3: 2022-04-21</span><br>
+
+          <br> -->
         <div style="display: flex; justify-content: left;">
           <button id="close-cart-btn" class="button">Close</button>
         </div>
@@ -412,15 +481,16 @@
       var userRole = localStorage.getItem("role");
 
       // Use the role for further logic
-      if (userRole  === "sales") {
+      if (userRole === "sales") {
         $("#dashboard-menu").hide();
         $("#maintain-menu").hide();
         $("#reports-menu").hide();
         $("#repairs-menu").hide();
-        }else if (userRole  === "admin") {
+        $("#warranty-menu").hide();
+      } else if (userRole === "admin") {
 
-        }
-  </script>
+      }
+    </script>
   </main>
   <footer class="footer">
     <div>
@@ -430,7 +500,77 @@
           href="mailto:info@emmasengines.com">info@emmasengines.com</a></p>
     </div>
   </footer>
-  <script src="js/form_equipment.js"></script>
+
+
+
+
+  <!-- Kim -->
+  <!-- Help Popup -->
+  <div id="cart-popup1" class="cart-popup1">
+    <div class="cart-content">
+      <h6>Help</h6><br>
+
+      <div style="margin-bottom: 5px;">
+        <button type="button" class="collapse show" style="padding: 10px;" onclick="togglelookupDetails('help1')">
+          <span>How to create new customer</span> <i id="icon-help1" class="bi bi-caret-right"
+            style="font-size: 15px;"></i>
+        </button>
+      </div>
+
+      <div id="help1" class="collapsible-content help-content">
+        <div style="border: block; padding-bottom: 20px; ">
+          <div style="border: block; padding-bottom: 20px;">
+            <p>1. Begin by navigating to the "Create New Customer" section on the user dashboard or main menu.</p>
+            <p>2. Once there, look for an option or button that is labeled "Add New Customer" or a similar phrase.</p>
+            <p>3. Click on the designated button to initiate the customer creation process.</p>
+            <p>4. Fill in the required information, such as the customer's name, contact details, and any other relevant
+              details.</p>
+            <p>5. Finally, review the entered information for accuracy and completeness before confirming and saving the
+              new customer profile.</p>
+          </div>
+        </div>
+      </div>
+
+
+      <div style="margin-bottom: 5px;">
+        <button type="button" class="collapse show" style="padding: 10px;" onclick="togglelookupDetails('help2')">
+          <span>How to edit current customer</span> <i id="icon-help2" class="bi bi-caret-right"
+            style="font-size: 15px;"></i>
+        </button>
+      </div>
+
+      <div id="help2" class="collapsible-content help-content">
+        <div style="border: block; padding-bottom: 20px; ">
+          <div style="border: block; padding-bottom: 20px;">
+            <p>1. Begin by navigating to the "Create New Customer" section on the user dashboard or main menu.</p>
+            <p>2. Once there, look for an option or button that is labeled "Add New Customer" or a similar phrase.</p>
+            <p>3. Click on the designated button to initiate the customer creation process.</p>
+            <p>4. Fill in the required information, such as the customer's name, contact details, and any other relevant
+              details.</p>
+            <p>5. Finally, review the entered information for accuracy and completeness before confirming and saving the
+              new customer profile.</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="display: flex; justify-content: center; position: fixed; bottom: 150px;">
+        <button id="closeCart" class="button">Close</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    document
+      .getElementById("closeCart")
+      .addEventListener("click", function () {
+        document.getElementById("cart-popup1").style.display = "none";
+      });
+
+  </script>
+  <!-- Code for tooltips -->
+  <!-- Kim -->
+  <script src="js/cart_popup.js"></script>
+  <script src="js/form_popup.js"></script>
+  <script src="js/car_help_popup_cust.js"></script>
   <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>

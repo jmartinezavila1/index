@@ -57,7 +57,6 @@ document.getElementById("closePopup").addEventListener("click", function() {
     document.getElementById("overlay").style.display = "none";
     document.getElementById("popup").style.display = "none";
 });
-
 document.getElementById("closePopup2").addEventListener("click", function() {
     document.getElementById("overlay").style.display = "none";
     document.getElementById("popup").style.display = "none";

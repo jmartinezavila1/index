@@ -19,6 +19,7 @@
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,300,0,0" />
     <!-- css-->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style_media.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
     <!--DataTable-->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -31,7 +32,7 @@
         <!-- Nav Menu-->
         <div class="container-fluid ">
             <nav class="navbar navbar-expand-lg navbar-light navbar-top-flex">
-                <a class="navbar-brand" href="index.html">
+                <a class="navbar-brand" href="dashboard.html">
                     <div class="icon-flex">
                         <img src="images/logo1.png" alt="company logo">
                         <span id="logo">Emma's Small Engine</span>
@@ -57,7 +58,7 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="adminDropdown">
                                 <a class="dropdown-item" href="#">Profile</a>
-                                <a class="dropdown-item" href="login.html">Logout</a>
+                                <a class="dropdown-item" href="index.html">Logout</a>
                             </div>
                         </li>
                     </ul>
@@ -75,7 +76,7 @@
               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <div id="dashboard-menu">
                   <li class="nav-item">
-                    <a id="dashboard-link" class="nav-link" aria-current="page" href="index.html">
+                    <a id="dashboard-link" class="nav-link" aria-current="page" href="dashboard.html">
                       <i class="icon-bottom bi bi-speedometer"></i>Dashboard</a>
                   </li>
                 </div>
@@ -122,15 +123,10 @@
                     </ul>
                   </li>
                 </div>
-                <div id="reports-menu" class="boder-left">
-                  <li class="nav-item dropdown">
-                    <a id="reports-link" class="nav-link dropdown-toggle" href="#" id="dropdown05" data-bs-toggle="dropdown" aria-expanded="false">
+                <div id="customer-menu" class="boder-left">
+                  <li class="nav-item">
+                    <a id="customer-link" class="nav-link" aria-current="page" href="warranty_report.html">
                       <i class="icon-bottom bi bi-clipboard2-data-fill"></i>Reports</a>
-                    <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown05">
-                      <li><a id="warranty-report-link" class="dropdown-item" href="warranty_report.html"> Warranty&raquo; </a></li>
-                      <li><a id="repair-report-link" class="dropdown-item" href="repair_report.html"> Repairs &raquo; </a></li>
-                      <li><a id="activity-report-link" class="dropdown-item" href="activity_report.html"> User Activity &raquo; </a></li>
-                    </ul>
                   </li>
                 </div>
               </ul>
@@ -261,7 +257,7 @@
       </tbody>
     </table>
     <!-- <div class="goback">
-      <input type="submit" onclick="location.href='index.html'" class="cancel" value="Back">
+      <input type="submit" onclick="location.href='dashboard.html'" class="cancel" value="Back">
     </div> -->
 
     <!-- Initiatize DatatABLE -->
@@ -303,6 +299,7 @@
     </div>
   </footer>
   <script src="js/form_equipment.js"></script>
+  <script src="js/dummy_buttons.js"></script>
   <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>

@@ -1,4 +1,4 @@
-const showCartButtons = document.querySelectorAll(".show-help-btn");
+const showCartButtons = document.querySelectorAll(".show-help-btn1");
 
 showCartButtons.forEach((button, index) => {
     button.addEventListener("click", function () {

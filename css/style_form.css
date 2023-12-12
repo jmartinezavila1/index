@@ -269,7 +269,7 @@ img{
     align-items: center;
 }
 
-.popup, .popup2, .popup3 {
+.popup, .popup2 {
     display: none;
     position: fixed;
     top: 50%;
@@ -284,7 +284,7 @@ img{
 }
 
 /* Style for the dark overlay */
-.overlay,.overlay2,.overlay3 {
+.overlay,.overlay2 {
     display: none;
     position: fixed;
     top: 0;

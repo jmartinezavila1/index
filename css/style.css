@@ -35,6 +35,11 @@
 	--font-color-bl: #5591eb;
 	--font-color-bl-b: #003d99;
 }
+
+
+button{
+	border: none;
+}
 /* Temparary Index Card */
 .card2{
 	border: none;
@@ -77,19 +82,19 @@
     top: 0;
     right: 0;
     bottom: 0;
-    width: 15%;
+    width: 15vw;
     background-color: #fff;
     box-shadow: -5px 0 5px rgba(0, 0, 0, 0.2);
     overflow-y: auto;
     padding: 20px;
 }
-.cart-popup-help {
+
+.cart-popup1 {
     display: none;
     position: fixed;
     top: 0;
-    left: 0;
     bottom: 0;
-    width: 15%;
+    width: 15vw;
     background-color: #fff;
     box-shadow: -5px 0 5px rgba(0, 0, 0, 0.2);
     overflow-y: auto;
@@ -98,7 +103,7 @@
 
 .cart-content {
     text-align: left;
-	font-size: 14px;
+	font-size: 15px;
 }
 
 .show-cart-btn {
@@ -322,6 +327,10 @@ ul div:hover{
 	font-size: var(--font-size-sm);
 }
 
+.table-btn-flex{
+	display: flex;
+}
+
 .search-button {
 	height: 35px;
     margin: 0;
@@ -459,6 +468,27 @@ color:#4e4e4e;
 	height: 60px;
 }
 
+.security_flex{
+	display: flex; 
+	flex-direction: column;
+}
+
+.security_flex2{
+	display: flex; justify-content: center; margin-bottom: 20px;
+}
+
+.security_mg30{
+	margin-bottom: 30px;
+}
+
+.radio-btn{
+	display: inline-block;
+	margin-right: 15px;
+}
+
+.security_btn{
+	text-align: center;
+}
 a {
 	text-decoration: none;
 }
@@ -510,6 +540,14 @@ label {
 	background-color: #dfdede;
 	color: white;
 	/* Optionally, change text color to white on hover */
+}
+
+.cust-collapse{
+	padding: 5px 0 5px 50px; 
+	background-color: var(--bg-light-blue);
+	color: var(--font-color-wh);
+	width: 100%;
+	text-align: left;
 }
 
 
@@ -608,6 +646,7 @@ label {
 	display: flex;
 }
 
+
 /* .goback{
 	display: flex;
 	justify-content: center;
@@ -622,7 +661,6 @@ label {
 .editCustomer,
 .editManufacture,
 .showPopup2,
-.showPopup3,
 .editCity,
 .editEquipment,
 .edit_customerEquipment,
@@ -632,10 +670,7 @@ label {
 	color: var(--font-color-wh);
 	border: none;
 	cursor: pointer;
-}
-
-.showPopup3{
-	width: 100px;
+	margin-right: 5px;
 }
 
 .showPopupNew {
@@ -654,13 +689,13 @@ label {
 }
 .btn-detail-close{
 	display: flex; 
-	justify-content: space-between; 
+	justify-content: flex-start; 
 	align-items: flex-start;
 }
 
 .btn-detail, .btn-repair{
 	padding: 0px 10px;
-	margin: 5px;
+	margin: 0 6px;
 	color: var(--font-color-bl);
 	border: none;
 	cursor: pointer;
@@ -694,7 +729,7 @@ table.dataTable{
     background-color: var(--bg-light-gery);
     color: var(--font-color--dark-gr);
     cursor: pointer;
-    padding: 10px;
+    padding: 10px;	
     width: 100%;
     text-align: left;
     border: none;
@@ -702,22 +737,12 @@ table.dataTable{
     font-size: var(--font-size-md);
     transition: background-color 0.3s ease, color 0.3s ease;
 }
-.collapsible-btn-rep {
-    background-color: var(--icon-color);
-    color: var(--font-color-wh);
-    cursor: pointer;
-    padding: 10px;
-    text-align: left;
-    border: none;
-    outline: none;
-    font-size: var(--font-size-md);
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
 
 .collapsible-content {
 	display: none;
   }
+
+
 
 /* Collapsible button hover effect */
 .collapsible-btn:hover {
@@ -790,7 +815,6 @@ table.dataTable{
 #manufactureTable td,
 #typeTable td,
 #reportTable td
-
 {
 	font-size: 16px;
 }
@@ -804,14 +828,11 @@ table.dataTable{
 #colorTable_wrapper,
 #manufactureTable_wrapper,
 #typeTable_wrapper,
-#reportTable_wrapper
- {
+#reportTable_wrapper {
 	width: 90%;
 	margin: auto;
 	padding-top: 25px;
 }
-
-
 
 #bottom {
 	padding-top: 100px;
@@ -871,7 +892,7 @@ table.dataTable{
 .fixed-button {
 	position: fixed;
 	bottom: 40px; /* Ajusta según la posición deseada hacia arriba */
-	right: 20px;
+	left: 20px;
 	z-index: 1000;
 	border-radius: 50%; /* Hace que el botón sea circular */
 	width: 60px; /* Ajusta según el tamaño deseado */
@@ -897,137 +918,9 @@ table.dataTable{
     padding: 0; 
     color: #6c757d; 
 }
-
-
-/* Media Query */
-@media (max-width: 768px) {
-	
-
-	.form {
-		display: grid;
-		grid-template-columns: 1fr;
-		gap: 20px;
-	}
-
-	.form_input {
-		width: 100%;
-		height: 45px;
-		line-height: 45px;
-		padding: 0 40px 0 10px;
-	}
-
-	.main-title {
-		font-size: var(--font-size-lg);
-	}
-
-	.showPopup.btn-add {
-		font-size: var(--font-size-xs);
-	}
-
-	.group_btn {
-		gap: 20px;
-	}
-
-	main .customer_table {
-		padding: 50px 200px;
-	}
-
-	.navbar-nav .nav-link  {
-		padding-right: 0.5rem;
-		padding-left: 0.5rem;
-	}
-	.navbar-nav .dropdown-menu {
-		position: absolute;
-	}
-
+.popover {
+	background-color: rgba(255, 255, 255, 0.8); /* Adjust the opacity (fourth parameter) as needed */
+	color: #000; /* Set the text color */
+	border: 1px solid #ccc; /* Set the border color */
 }
 
-@media (min-width: 769px) and (max-width: 1024px) {
-
-	/* specific styles for Tablets */
-	
-
-	.form {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		gap: 20px;
-	}
-
-	.form_input {
-		width: 100%;
-		height: 45px;
-		line-height: 45px;
-		padding: 0 40px 0 10px;
-	}
-
-	.main-title {
-		font-size: var(--font-size-ml);
-	}
-
-	.showPopup.btn-add {
-		font-size: var(--font-size-xs);
-	}
-
-	.group_btn {
-		gap: 20px;
-	}
-
-	.center-buttons {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		margin-top: 10px;
-	}
-
-	.button-container {
-		grid-column: span 2;
-		text-align: center;
-	}
-	
-	.navbar-nav .nav-link {
-		padding-right: 0.5rem;
-		padding-left: 0.5rem;
-	}
-	.navbar-nav .dropdown-menu {
-		position: absolute;
-	}
-}
-
-@media (min-width: 1025px) {
-
-	/* Especific styles for big screens */
-	
-	.form {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		gap: 20px;
-	}
-
-	.form_input {
-		width: 100%;
-		height: 45px;
-		line-height: 45px;
-		padding: 0 40px 0 10px;
-	}
-
-
-	.main-title {
-		font-size: var(--font-size-ml);
-	}
-
-	.showPopup.btn-add {
-		font-size: var(--font-size-xs);
-	}
-
-	.group_btn {
-		gap: 20px;
-	}
-
-	.button-container {
-		grid-column: span 2;
-		text-align: center;
-	}
-
-
-
-}
